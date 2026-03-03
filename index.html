@@ -2,1105 +2,880 @@
 <html lang="id">
 <head>
 <meta charset="UTF-8"/>
-<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
-<meta name="theme-color" content="#f6f9ff"/>
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"/>
+<meta name="theme-color" content="#ffffff"/>
 <meta name="apple-mobile-web-app-capable" content="yes"/>
-<meta name="apple-mobile-web-app-status-bar-style" content="default"/>
-<title>PT. Rafasa Global Express — Logistik Terpercaya</title>
-<link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+<title>PT. Rafasa Global Express — Logistik Terpercaya Indonesia</title>
+
+<!-- Preconnect fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<!-- Only 2 weights each, display=swap -->
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Manrope:wght@400;600&display=swap" rel="stylesheet"/>
+
 <style>
-/* ═══════════════════════════ TOKENS ═══════════════════════════ */
-:root {
-  --bg:          #f5f8ff;
-  --white:       #ffffff;
-  --ink:         #07101f;
-  --ink-2:       #2c3e5a;
-  --muted:       #6b7fa3;
-  --blue:        #1d4ed8;
-  --blue-l:      #3b82f6;
-  --orange:      #ea6c0a;
-  --orng-l:      #fb923c;
-  --glass:       rgba(255,255,255,0.72);
-  --glass-b:     rgba(255,255,255,0.95);
-  --border:      rgba(255,255,255,0.75);
-  --border-d:    rgba(7,16,31,0.09);
-  --r:           14px;
-  --r-lg:        20px;
-  --shadow:      0 2px 20px rgba(7,16,31,0.07),0 1px 3px rgba(7,16,31,0.04);
-  --shadow-lg:   0 16px 48px rgba(7,16,31,0.12),0 4px 12px rgba(7,16,31,0.06);
-  --ease:        cubic-bezier(0.16,1,0.3,1);
-  /* iOS safe areas */
-  --sab:         env(safe-area-inset-bottom, 0px);
-  --sat:         env(safe-area-inset-top, 0px);
+/* ── TOKENS ──────────────────────────────── */
+:root{
+  --bg:#f5f8ff;
+  --white:#fff;
+  --ink:#07101f;
+  --ink2:#334155;
+  --muted:#64748b;
+  --blue:#1d4ed8;
+  --bluel:#2563eb;
+  --orange:#ea6c0a;
+  --orangel:#f97316;
+  --border:#e2e8f0;
+  --shadow:0 1px 3px rgba(0,0,0,.07),0 4px 16px rgba(0,0,0,.05);
+  --shadow-md:0 4px 24px rgba(0,0,0,.09),0 1px 4px rgba(0,0,0,.05);
+  --r:12px;
+  --r2:18px;
+  --ease:cubic-bezier(.16,1,.3,1);
+  --sab:env(safe-area-inset-bottom,0px);
+  --sat:env(safe-area-inset-top,0px);
 }
 
-/* ═══════════════════════════ RESET ═══════════════════════════ */
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
-html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;text-size-adjust:100%;}
-body{
-  font-family:'Manrope',sans-serif;
-  background:var(--bg);
-  color:var(--ink);
-  overflow-x:hidden;
-  -webkit-font-smoothing:antialiased;
-  -moz-osx-font-smoothing:grayscale;
-}
-img{display:block;max-width:100%;height:auto;}
-a{text-decoration:none;color:inherit;}
-button{font-family:inherit;}
-/* Tap highlight off on iOS */
-a,button,[role="button"]{-webkit-tap-highlight-color:transparent;}
+/* ── RESET ───────────────────────────────── */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:'Manrope',system-ui,sans-serif;background:var(--bg);color:var(--ink);overflow-x:hidden;-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%;height:auto}
+a{text-decoration:none;color:inherit;-webkit-tap-highlight-color:transparent}
+button{font-family:inherit;-webkit-tap-highlight-color:transparent}
 
-/* ═══════════════════════════ MESH BG ═══════════════════════════ */
-.mesh-bg{
-  position:fixed;inset:0;z-index:-1;
-  background:var(--bg);
-  overflow:hidden;
-  will-change:transform;
-}
-.mb{
-  position:absolute;border-radius:50%;
-  filter:blur(70px);opacity:0.65;
-  animation:mbf 14s ease-in-out infinite;
-  will-change:transform;
-}
-.mb:nth-child(1){width:min(600px,100vw);height:min(600px,100vw);background:radial-gradient(#dbeafe,transparent 70%);top:-20%;left:-15%;animation-duration:15s;}
-.mb:nth-child(2){width:min(500px,90vw);height:min(500px,90vw);background:radial-gradient(#fde8d8,transparent 70%);top:30%;right:-15%;animation-duration:18s;animation-delay:-5s;}
-.mb:nth-child(3){width:min(420px,80vw);height:min(420px,80vw);background:radial-gradient(#d1fae5,transparent 70%);bottom:5%;left:15%;animation-duration:20s;animation-delay:-9s;}
-.mb:nth-child(4){width:min(380px,75vw);height:min(380px,75vw);background:radial-gradient(#ede9fe,transparent 70%);top:55%;left:50%;animation-duration:22s;animation-delay:-7s;}
-@keyframes mbf{0%,100%{transform:translate(0,0)scale(1);}33%{transform:translate(30px,-24px)scale(1.04);}66%{transform:translate(-16px,32px)scale(0.97);}}
-.grain{position:fixed;inset:0;z-index:-1;pointer-events:none;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.025'/%3E%3C/svg%3E");opacity:.4;}
-
-/* ═══════════════════════════ GLASS ═══════════════════════════ */
-.glass{background:var(--glass);backdrop-filter:blur(18px) saturate(180%);-webkit-backdrop-filter:blur(18px) saturate(180%);border:1px solid var(--border);box-shadow:var(--shadow);}
-.glass-b{background:var(--glass-b);backdrop-filter:blur(24px) saturate(200%);-webkit-backdrop-filter:blur(24px) saturate(200%);border:1px solid rgba(255,255,255,0.92);box-shadow:var(--shadow);}
-
-/* ═══════════════════════════ SCROLL REVEAL ═══════════════════════════ */
-[data-r]{opacity:0;transform:translateY(40px) scale(0.97);transition:opacity .8s var(--ease),transform .8s var(--ease);}
-[data-r="l"]{transform:translateX(-36px) scale(0.97);}
-[data-r="r"]{transform:translateX(36px) scale(0.97);}
-[data-r="f"]{transform:none;}
-[data-r].on{opacity:1;transform:none !important;}
-/* Disable heavy transforms on low-end mobile — prefer simple fade */
-@media (prefers-reduced-motion:reduce){[data-r]{transform:none !important;transition:opacity .5s ease !important;}}
-
-/* ═══════════════════════════ NAVBAR ═══════════════════════════ */
-#nav{
-  position:fixed;
-  top:12px;
-  left:50%;transform:translateX(-50%);
-  width:calc(100% - 24px);
-  max-width:1180px;
-  z-index:500;
-  border-radius:var(--r-lg);
-  height:58px;
-  display:flex;align-items:center;
-  padding:0 8px 0 20px;
-  gap:4px;
-  transition:box-shadow .3s,background .3s;
-  /* iOS safe area for top notch */
-  top:calc(12px + var(--sat));
-}
-#nav.scrolled{box-shadow:0 8px 36px rgba(7,16,31,0.13),0 1px 0 rgba(255,255,255,0.8) inset;}
-
-.nav-logo{
-  font-family:'Syne',sans-serif;
-  font-weight:800;font-size:1.05rem;
-  letter-spacing:-.01em;
-  color:var(--ink);
-  white-space:nowrap;flex-shrink:0;
-  margin-right:8px;
-  padding:4px 0;
-}
-.nav-logo em{color:var(--orange);font-style:normal;}
-
-.nav-links{
-  display:flex;align-items:center;gap:2px;
-  list-style:none;margin-left:auto;
-}
-.nav-links a{
-  font-size:.79rem;font-weight:600;
-  color:var(--ink-2);
-  padding:8px 11px;border-radius:10px;
-  display:block;white-space:nowrap;
-  transition:color .2s,background .2s;
-  position:relative;
-}
-.nav-links a::after{
+/* ── STATIC GRADIENT BG (no animation = zero CPU) ── */
+body::before{
   content:'';
-  position:absolute;bottom:4px;left:11px;right:11px;
-  height:2px;background:var(--orange);border-radius:2px;
-  transform:scaleX(0);transition:transform .25s var(--ease);
+  position:fixed;inset:0;z-index:-1;
+  background:
+    radial-gradient(ellipse 70% 50% at 10% 0%,#dbeafe88 0%,transparent 60%),
+    radial-gradient(ellipse 55% 45% at 95% 20%,#fde8d888 0%,transparent 60%),
+    radial-gradient(ellipse 50% 40% at 50% 100%,#d1fae588 0%,transparent 60%),
+    var(--bg);
+  pointer-events:none;
 }
-.nav-links a:hover{color:var(--blue);background:rgba(29,78,216,0.06);}
-.nav-links a:hover::after{transform:scaleX(1);}
 
-.nav-cta{
-  background:var(--blue) !important;
-  color:#fff !important;
-  border-radius:10px !important;
-  margin-left:6px;
-  box-shadow:0 3px 14px rgba(29,78,216,0.28);
-  min-width:unset;
-  padding:9px 16px !important;
-}
-.nav-cta::after{display:none !important;}
-.nav-cta:hover{background:var(--blue-l) !important;}
+/* ── REVEAL ─────────────────────────────── */
+[data-r]{opacity:0;transform:translateY(32px);transition:opacity .65s var(--ease),transform .65s var(--ease)}
+[data-r].on{opacity:1;transform:none}
+[data-r="l"]{transform:translateX(-28px)}
+[data-r="r"]{transform:translateX(28px)}
+[data-r="f"]{transform:none}
+@media(prefers-reduced-motion:reduce){[data-r]{transform:none!important;transition:opacity .4s ease!important}}
 
-/* ── Hamburger ── */
-.nav-burger{
-  display:none;
-  margin-left:auto;flex-shrink:0;
-  width:40px;height:40px;
-  background:rgba(7,16,31,0.06);
-  border:none;border-radius:10px;cursor:pointer;
-  align-items:center;justify-content:center;flex-direction:column;gap:5px;
-  /* Minimum touch target iOS */
-  min-width:44px;min-height:44px;
-}
-.nav-burger span{display:block;width:18px;height:1.5px;background:var(--ink);border-radius:2px;transition:transform .3s var(--ease),opacity .3s;}
-.nav-burger.open span:nth-child(1){transform:translateY(6.5px) rotate(45deg);}
-.nav-burger.open span:nth-child(2){opacity:0;}
-.nav-burger.open span:nth-child(3){transform:translateY(-6.5px) rotate(-45deg);}
+/* ── LAYOUT ─────────────────────────────── */
+.wrap{max-width:1160px;margin:0 auto;padding:0 24px}
+.sec{padding:88px 0}
+@media(max-width:640px){.sec{padding:56px 0}.wrap{padding:0 16px}}
 
-/* ── Mobile drawer ── */
-.mobile-drawer{
-  position:fixed;
-  top:calc(82px + var(--sat));
-  left:12px;right:12px;
-  z-index:499;
-  border-radius:var(--r-lg);
-  padding:10px;
-  flex-direction:column;gap:2px;
-  box-shadow:var(--shadow-lg);
-  display:none;
-  /* iOS scroll for long menus */
-  overflow-y:auto;
-  max-height:calc(100dvh - 110px);
-}
-.mobile-drawer.open{display:flex;}
-.mobile-drawer a{
-  font-size:.92rem;font-weight:600;
-  color:var(--ink-2);
-  padding:14px 18px;
-  border-radius:12px;
-  display:flex;align-items:center;gap:10px;
-  transition:background .2s,color .2s;
-  /* iOS min touch target */
-  min-height:44px;
-}
-.mobile-drawer a:hover,.mobile-drawer a:active{background:rgba(29,78,216,0.07);color:var(--blue);}
-.md-cta{background:var(--blue) !important;color:#fff !important;text-align:center;justify-content:center;margin-top:6px;border-radius:12px !important;}
-.md-cta:hover,.md-cta:active{background:var(--blue-l) !important;}
+.label{display:block;font-size:.7rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--orange);margin-bottom:10px}
+.title{font-family:'Syne',sans-serif;font-size:clamp(1.85rem,4.5vw,3.1rem);font-weight:800;letter-spacing:-.03em;line-height:1.05;color:var(--ink)}
+.title em{font-style:normal;color:var(--blue)}
+.sub{font-size:clamp(.88rem,2vw,.97rem);color:var(--muted);line-height:1.8}
 
-/* ═══════════════════════════ BUTTONS ═══════════════════════════ */
+/* ── BUTTONS ─────────────────────────────── */
 .btn{
   display:inline-flex;align-items:center;justify-content:center;gap:8px;
-  font-family:'Manrope',sans-serif;
-  font-size:.88rem;font-weight:700;
-  letter-spacing:.01em;
-  border:none;cursor:pointer;
-  border-radius:12px;padding:14px 24px;
-  transition:transform .25s var(--ease),box-shadow .25s,background .2s;
-  position:relative;overflow:hidden;
-  /* iOS */
+  font-size:.86rem;font-weight:700;letter-spacing:.01em;
+  border:none;border-radius:var(--r);padding:13px 22px;
+  cursor:pointer;touch-action:manipulation;
+  min-height:46px;transition:transform .2s var(--ease),box-shadow .2s,opacity .2s;
   -webkit-appearance:none;
-  min-height:48px; /* iOS accessibility min */
-  touch-action:manipulation;
 }
-.btn:active{transform:scale(.97) !important;}
-.btn-blue{background:var(--blue);color:#fff;box-shadow:0 4px 18px rgba(29,78,216,0.32);}
-.btn-blue:hover{box-shadow:0 8px 28px rgba(29,78,216,0.42);transform:translateY(-1px);}
-.btn-orange{background:var(--orange);color:#fff;box-shadow:0 4px 18px rgba(234,108,10,0.32);}
-.btn-orange:hover{box-shadow:0 8px 28px rgba(234,108,10,0.42);transform:translateY(-1px);}
-.btn-ghost{background:rgba(7,16,31,0.06);color:var(--ink);border:1px solid var(--border-d);}
-.btn-ghost:hover{background:rgba(7,16,31,0.1);}
-.btn-glass{background:var(--glass);color:var(--blue);border:1px solid var(--border);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);}
+.btn:active{transform:scale(.97);opacity:.9}
+.btn-blue{background:var(--blue);color:#fff;box-shadow:0 3px 14px rgba(29,78,216,.28)}
+.btn-blue:hover{background:var(--bluel);box-shadow:0 6px 20px rgba(29,78,216,.35)}
+.btn-orange{background:var(--orange);color:#fff;box-shadow:0 3px 14px rgba(234,108,10,.28)}
+.btn-orange:hover{background:var(--orangel)}
+.btn-outline{background:transparent;color:var(--ink);border:1.5px solid var(--border)}
+.btn-outline:hover{border-color:var(--blue);color:var(--blue)}
 
-/* ═══════════════════════════ LAYOUT ═══════════════════════════ */
-.container{max-width:1180px;margin:0 auto;padding:0 20px;}
-.section{padding:80px 0;}
-@media(max-width:640px){.section{padding:56px 0;}.container{padding:0 16px;}}
+/* ── NAV ──────────────────────────────────── */
+#nav{
+  position:fixed;
+  top:calc(10px + var(--sat));
+  left:50%;transform:translateX(-50%);
+  width:calc(100% - 24px);max-width:1160px;
+  z-index:500;
+  background:rgba(255,255,255,.92);
+  border:1px solid rgba(255,255,255,.9);
+  border-radius:var(--r2);
+  height:58px;
+  display:flex;align-items:center;
+  padding:0 8px 0 20px;gap:4px;
+  box-shadow:var(--shadow);
+  /* NO backdrop-filter — too heavy on mobile */
+  transition:box-shadow .3s;
+}
+#nav.scrolled{box-shadow:0 4px 28px rgba(0,0,0,.1)}
 
-.overline{display:block;font-size:.7rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--orange);margin-bottom:10px;}
-.h2{font-family:'Syne',sans-serif;font-size:clamp(1.9rem,5vw,3.2rem);font-weight:800;letter-spacing:-.03em;color:var(--ink);line-height:1.06;}
-.h2 em{font-style:normal;color:var(--blue);}
-.body-t{font-size:clamp(.88rem,2.5vw,.98rem);color:var(--muted);line-height:1.8;}
+.nav-logo{
+  font-family:'Syne',sans-serif;font-weight:800;font-size:1.05rem;
+  letter-spacing:-.01em;color:var(--ink);white-space:nowrap;flex-shrink:0;margin-right:8px;
+}
+.nav-logo em{color:var(--orange);font-style:normal}
 
-/* ═══════════════════════════ HERO ═══════════════════════════ */
+.nav-links{display:flex;align-items:center;gap:2px;list-style:none;margin-left:auto}
+.nav-links a{
+  font-size:.79rem;font-weight:600;color:var(--ink2);
+  padding:8px 12px;border-radius:9px;
+  transition:color .18s,background .18s;white-space:nowrap;
+}
+.nav-links a:hover{color:var(--blue);background:rgba(29,78,216,.07)}
+.nav-pill{
+  background:var(--blue)!important;color:#fff!important;
+  border-radius:9px!important;margin-left:6px;
+  box-shadow:0 2px 10px rgba(29,78,216,.25);
+}
+.nav-pill:hover{background:var(--bluel)!important}
+
+/* Burger */
+.burger{
+  display:none;margin-left:auto;flex-shrink:0;
+  width:40px;height:40px;min-width:44px;min-height:44px;
+  background:rgba(7,16,31,.06);border:none;border-radius:9px;cursor:pointer;
+  align-items:center;justify-content:center;flex-direction:column;gap:5px;
+}
+.burger span{display:block;width:17px;height:1.5px;background:var(--ink);border-radius:2px;transition:transform .28s var(--ease),opacity .28s}
+.burger.open span:nth-child(1){transform:translateY(6.5px)rotate(45deg)}
+.burger.open span:nth-child(2){opacity:0}
+.burger.open span:nth-child(3){transform:translateY(-6.5px)rotate(-45deg)}
+
+/* Drawer */
+.drawer{
+  position:fixed;
+  top:calc(80px + var(--sat));
+  left:12px;right:12px;z-index:499;
+  background:#fff;
+  border:1px solid var(--border);
+  border-radius:var(--r2);
+  box-shadow:var(--shadow-md);
+  padding:10px;
+  flex-direction:column;gap:2px;
+  display:none;
+  max-height:calc(100dvh - 100px);
+  overflow-y:auto;-webkit-overflow-scrolling:touch;
+}
+.drawer.open{display:flex}
+.drawer a{
+  font-size:.9rem;font-weight:600;color:var(--ink2);
+  padding:13px 16px;border-radius:11px;
+  transition:background .18s,color .18s;min-height:44px;
+  display:flex;align-items:center;gap:10px;
+}
+.drawer a:hover,.drawer a:active{background:rgba(29,78,216,.07);color:var(--blue)}
+.drawer .dcta{background:var(--blue);color:#fff!important;text-align:center;justify-content:center;margin-top:6px;border-radius:11px}
+.drawer .dcta:hover,.drawer .dcta:active{background:var(--bluel)!important}
+
+/* ── HERO ─────────────────────────────────── */
 .hero{
-  min-height:100svh; /* svh = small viewport height, fixes iOS bar */
-  padding-top:calc(58px + 12px + var(--sat) + 32px);
-  padding-bottom:0;
-  padding-left:0;padding-right:0;
+  min-height:100svh;
+  padding-top:calc(58px + 10px + var(--sat) + 28px);
   display:flex;flex-direction:column;
   position:relative;overflow:hidden;
 }
-.hero-bg-photo{
+/* Subtle static bg image — no parallax on mobile */
+.hero-photo{
   position:absolute;inset:0;
-  background:url('https://images.unsplash.com/photo-1578575437130-527eed3abbec?w=1600&q=80') center 55%/cover no-repeat;
+  background:url('https://images.unsplash.com/photo-1578575437130-527eed3abbec?w=1400&q=75') center 55%/cover no-repeat;
   opacity:.055;
-  will-change:transform;
 }
+.hero-content{flex:1;display:flex;align-items:center;padding:28px 24px 0;max-width:1160px;width:100%;margin:0 auto}
+.hero-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;width:100%;padding-bottom:40px}
 
-.hero-body{
-  flex:1;
-  display:flex;flex-direction:column;justify-content:center;
-  padding:0 20px;
-  max-width:1180px;width:100%;margin:0 auto;
-}
-
-/* On desktop: two columns */
-.hero-cols{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:48px;
-  align-items:center;
-}
-
-.hero-eyebrow{
+/* Left */
+.hero-badge{
   display:inline-flex;align-items:center;gap:7px;
-  font-size:.7rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;
+  font-size:.68rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;
   color:var(--blue);
   padding:6px 14px;border-radius:100px;
-  background:rgba(29,78,216,0.08);border:1px solid rgba(29,78,216,0.16);
-  margin-bottom:20px;
-  animation:fadeUp .7s var(--ease) both;
-  width:fit-content;
+  background:rgba(29,78,216,.08);border:1px solid rgba(29,78,216,.15);
+  margin-bottom:20px;width:fit-content;
+  animation:fup .6s var(--ease) both;
 }
-.edot{width:6px;height:6px;background:var(--blue);border-radius:50%;animation:epulse 2s ease infinite;}
-@keyframes epulse{0%,100%{opacity:1;transform:scale(1);}50%{opacity:.35;transform:scale(1.5);}}
+.bdot{width:6px;height:6px;background:var(--blue);border-radius:50%;animation:bp 2s ease infinite}
+@keyframes bp{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.35;transform:scale(1.5)}}
 
 .hero-title{
-  font-family:'Syne',sans-serif;
-  font-size:clamp(2.6rem,8.5vw,5.4rem);
-  font-weight:800;
-  line-height:.96;letter-spacing:-.04em;
-  color:var(--ink);
+  font-family:'Syne',sans-serif;font-size:clamp(2.5rem,7.5vw,5.2rem);
+  font-weight:800;line-height:.95;letter-spacing:-.04em;color:var(--ink);
   margin-bottom:20px;
-  animation:fadeUp .8s .1s var(--ease) both;
+  animation:fup .75s .08s var(--ease) both;
 }
-.hero-title .grad{background:linear-gradient(135deg,var(--blue),var(--orange));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
-.hero-title .strk{-webkit-text-stroke:2px var(--ink);color:transparent;}
+.hero-title .g{background:linear-gradient(135deg,var(--blue),var(--orange));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hero-title .s{-webkit-text-stroke:2px var(--ink);color:transparent}
 
-.hero-sub{
-  font-size:clamp(.88rem,2.5vw,1rem);
-  color:var(--muted);line-height:1.78;
-  max-width:440px;
-  margin-bottom:32px;
-  animation:fadeUp .8s .2s var(--ease) both;
-}
+.hero-sub{font-size:clamp(.86rem,2vw,.97rem);color:var(--muted);line-height:1.78;max-width:420px;margin-bottom:28px;animation:fup .75s .16s var(--ease) both}
+.hero-btns{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:32px;animation:fup .75s .24s var(--ease) both}
+.hero-btns .btn{flex:1 1 auto;max-width:200px}
 
-.hero-btns{
-  display:flex;gap:10px;flex-wrap:wrap;
-  margin-bottom:36px;
-  animation:fadeUp .8s .3s var(--ease) both;
-}
-.hero-btns .btn{flex:1 1 auto;max-width:220px;}
+.hero-kpis{display:flex;align-items:center;gap:20px;flex-wrap:wrap;animation:fup .75s .32s var(--ease) both}
+.kpi-div{width:1px;height:26px;background:var(--border)}
+.kpi{display:flex;flex-direction:column}
+.kpi-n{font-family:'Syne',sans-serif;font-size:1.15rem;font-weight:800;color:var(--ink);letter-spacing:-.02em;line-height:1}
+.kpi-l{font-size:.67rem;font-weight:600;color:var(--muted);margin-top:2px}
 
-.hero-trust{
-  display:flex;align-items:center;gap:20px;flex-wrap:wrap;
-  animation:fadeUp .8s .4s var(--ease) both;
-}
-.ht-div{width:1px;height:28px;background:var(--border-d);}
-.ht-item{display:flex;flex-direction:column;}
-.ht-num{font-family:'Syne',sans-serif;font-size:1.2rem;font-weight:800;color:var(--ink);letter-spacing:-.02em;line-height:1.1;}
-.ht-lbl{font-size:.68rem;font-weight:500;color:var(--muted);letter-spacing:.02em;}
+/* Right visual */
+.hero-vis{position:relative;height:420px}
+.hv-img{border-radius:var(--r2);overflow:hidden;height:270px;position:relative;box-shadow:var(--shadow-md)}
+.hv-img img{width:100%;height:100%;object-fit:cover}
+.hv-img::after{content:'';position:absolute;inset:0;background:linear-gradient(to top,rgba(7,16,31,.5) 0%,transparent 55%)}
+.hv-label{position:absolute;bottom:14px;left:14px;right:14px;z-index:2;display:flex;justify-content:space-between;align-items:center}
+.hv-label span{font-family:'Syne',sans-serif;font-size:.68rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.88)}
+.hv-live{display:flex;align-items:center;gap:5px;font-size:.67rem;font-weight:600;color:rgba(255,255,255,.7)}
+.ldot{width:6px;height:6px;background:#4ade80;border-radius:50%;animation:bp 2s ease infinite}
 
-/* Hero right visual */
-.hero-visual{
-  position:relative;
-  height:460px;
+/* Stat cards — simple white, no blur */
+.scard{
+  position:absolute;background:var(--white);
+  border:1px solid var(--border);border-radius:var(--r);
+  padding:13px 16px;box-shadow:var(--shadow-md);
+  min-width:148px;
+  animation:fc 6s ease-in-out infinite;
 }
-.hv-main{
-  border-radius:var(--r-lg);overflow:hidden;
-  height:300px;
-  box-shadow:var(--shadow-lg);
-  position:relative;
-}
-.hv-main img{width:100%;height:100%;object-fit:cover;}
-.hv-main::after{content:'';position:absolute;inset:0;background:linear-gradient(to top,rgba(7,16,31,.5) 0%,transparent 55%);}
-.hv-tag{position:absolute;bottom:14px;left:14px;right:14px;z-index:2;display:flex;align-items:center;justify-content:space-between;}
-.hv-tag span{font-family:'Syne',sans-serif;font-size:.7rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.9);}
-.hv-live{display:flex;align-items:center;gap:5px;font-size:.68rem;font-weight:600;color:rgba(255,255,255,.75);}
-.live-dot{width:6px;height:6px;background:#4ade80;border-radius:50%;animation:epulse 2s ease infinite;}
+.sc1{bottom:110px;left:-12px;animation-delay:0s}
+.sc2{bottom:12px;right:-8px;animation-delay:-2.5s;min-width:180px}
+@keyframes fc{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+.scl{font-size:.62rem;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:.08em;margin-bottom:3px}
+.scv{font-family:'Syne',sans-serif;font-size:1rem;font-weight:800;color:var(--ink)}
+.scs{font-size:.67rem;color:var(--muted);margin-top:2px}
+.green{color:#16a34a;font-weight:700}
 
-/* Floating stat cards */
-.fc{
-  position:absolute;
-  border-radius:14px;padding:14px 18px;
-  box-shadow:var(--shadow-lg);
-  min-width:150px;
-  animation:fcFloat 6s ease-in-out infinite;
-}
-.fc-1{bottom:130px;left:-16px;animation-delay:0s;}
-.fc-2{bottom:20px;right:-12px;animation-delay:-2s;min-width:190px;}
-.fc-3{top:260px;right:-16px;animation-delay:-4s;}
-@keyframes fcFloat{0%,100%{transform:translateY(0);}50%{transform:translateY(-9px);}}
-.fc-label{font-size:.65rem;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:.08em;margin-bottom:3px;}
-.fc-val{font-family:'Syne',sans-serif;font-size:1.1rem;font-weight:800;color:var(--ink);}
-.fc-sub{font-size:.68rem;color:var(--muted);margin-top:2px;}
-.fc-green{color:#16a34a;font-weight:700;}
-
-/* Stats footer bar */
-.hero-statsbar{
-  background:var(--white);
-  border-top:3px solid var(--orange);
+/* Stats bar */
+.statsbar{
+  background:var(--white);border-top:3px solid var(--orange);
   display:grid;grid-template-columns:repeat(4,1fr);
-  box-shadow:0 -4px 20px rgba(7,16,31,.06);
+  box-shadow:0 -3px 16px rgba(0,0,0,.05);
 }
-.sb-item{padding:20px 16px;text-align:center;border-right:1px solid var(--border-d);}
-.sb-item:last-child{border-right:none;}
-.sb-num{font-family:'Syne',sans-serif;font-size:clamp(1.6rem,4vw,2.2rem);font-weight:800;color:var(--orange);letter-spacing:-.02em;line-height:1;}
-.sb-lbl{font-size:.67rem;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:.07em;margin-top:4px;}
+.sbcell{padding:18px 12px;text-align:center;border-right:1px solid var(--border)}
+.sbcell:last-child{border-right:none}
+.sbn{font-family:'Syne',sans-serif;font-size:clamp(1.4rem,3.5vw,2rem);font-weight:800;color:var(--orange);letter-spacing:-.02em;line-height:1}
+.sbl{font-size:.64rem;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:.07em;margin-top:4px}
 
-@keyframes fadeUp{from{opacity:0;transform:translateY(28px);}to{opacity:1;transform:none;}}
+@keyframes fup{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
 
-/* ═══════════════════════════ MARQUEE ═══════════════════════════ */
-.marquee-wrap{background:var(--ink);padding:18px 0;overflow:hidden;}
-.marquee-track{display:flex;gap:0;width:max-content;animation:mscroll 22s linear infinite;}
-@keyframes mscroll{from{transform:translateX(0);}to{transform:translateX(-50%);}}
-.mitem{display:flex;align-items:center;gap:14px;padding:0 36px;font-family:'Syne',sans-serif;font-size:.72rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.38);white-space:nowrap;}
-.mdot{width:4px;height:4px;background:var(--orange);border-radius:50%;flex-shrink:0;}
+/* ── MARQUEE ─────────────────────────────── */
+.mq{background:var(--ink);padding:15px 0;overflow:hidden}
+.mq-track{display:flex;width:max-content;animation:mqs 24s linear infinite}
+@keyframes mqs{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.mqi{display:flex;align-items:center;gap:12px;padding:0 32px;font-family:'Syne',sans-serif;font-size:.68rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.36);white-space:nowrap}
+.mqd{width:4px;height:4px;background:var(--orange);border-radius:50%;flex-shrink:0}
 
-/* ═══════════════════════════ SERVICES ═══════════════════════════ */
-.services-head{display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:20px;margin-bottom:44px;}
-.bento{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
-.bc{
-  border-radius:var(--r-lg);overflow:hidden;
-  box-shadow:var(--shadow);
-  transition:transform .4s var(--ease),box-shadow .4s;
-  background:var(--white);
-}
-.bc:hover{transform:translateY(-5px) scale(1.01);box-shadow:var(--shadow-lg);}
-.bc-img{position:relative;height:200px;overflow:hidden;}
-.bc-img img{width:100%;height:100%;object-fit:cover;transition:transform .6s var(--ease);}
-.bc:hover .bc-img img{transform:scale(1.06);}
-.bc-img::after{content:'';position:absolute;inset:0;background:linear-gradient(to bottom,transparent 30%,rgba(7,16,31,.62));}
-.bc-badge{position:absolute;bottom:12px;left:12px;right:12px;z-index:2;display:flex;justify-content:space-between;align-items:center;}
-.bc-num{font-family:'Syne',sans-serif;font-size:.65rem;font-weight:700;letter-spacing:.14em;color:rgba(255,255,255,.55);}
-.bc-tag{font-size:.65rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#fff;padding:3px 9px;background:rgba(255,255,255,.15);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);border:1px solid rgba(255,255,255,.2);border-radius:100px;}
-.bc-body{padding:22px 22px 26px;}
-.bc-title{font-family:'Syne',sans-serif;font-size:1.05rem;font-weight:800;color:var(--ink);margin-bottom:8px;letter-spacing:-.02em;}
-.bc-desc{font-size:.83rem;color:var(--muted);line-height:1.68;}
-.bc-link{display:inline-flex;align-items:center;gap:5px;font-size:.75rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--blue);margin-top:14px;transition:gap .2s var(--ease);}
-.bc-link:hover{gap:9px;}
+/* ── SERVICES ───────────────────────────── */
+.svc-head{display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:20px;margin-bottom:40px}
+.svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.svc-card{border-radius:var(--r2);overflow:hidden;background:var(--white);border:1px solid var(--border);box-shadow:var(--shadow);transition:transform .3s var(--ease),box-shadow .3s}
+.svc-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-md)}
+.svc-img{position:relative;height:190px;overflow:hidden}
+.svc-img img{width:100%;height:100%;object-fit:cover;transition:transform .5s var(--ease)}
+.svc-card:hover .svc-img img{transform:scale(1.05)}
+.svc-img::after{content:'';position:absolute;inset:0;background:linear-gradient(to bottom,transparent 35%,rgba(7,16,31,.6))}
+.svc-badge{position:absolute;bottom:12px;left:12px;right:12px;z-index:2;display:flex;justify-content:space-between;align-items:center}
+.svc-n{font-family:'Syne',sans-serif;font-size:.62rem;font-weight:700;letter-spacing:.14em;color:rgba(255,255,255,.55)}
+.svc-tag{font-size:.62rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#fff;padding:3px 9px;background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.22);border-radius:100px}
+.svc-body{padding:20px 20px 24px}
+.svc-title{font-family:'Syne',sans-serif;font-size:1rem;font-weight:800;color:var(--ink);margin-bottom:7px;letter-spacing:-.02em}
+.svc-desc{font-size:.82rem;color:var(--muted);line-height:1.65}
+.svc-link{display:inline-flex;align-items:center;gap:5px;font-size:.74rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--blue);margin-top:13px;transition:gap .18s}
+.svc-link:hover{gap:8px}
 
-/* ═══════════════════════════ STATS ═══════════════════════════ */
-.stats-section{position:relative;overflow:hidden;}
-.stats-bg{position:absolute;inset:0;background:url('https://images.unsplash.com/photo-1494412574643-ff11b0a5c1c3?w=1600&q=80') center/cover;opacity:.08;}
-.stats-overlay{position:absolute;inset:0;background:var(--ink);}
-.stats-grid{
-  display:grid;grid-template-columns:repeat(4,1fr);
-  position:relative;z-index:2;
-}
-.sc{padding:56px 32px;text-align:center;border-right:1px solid rgba(255,255,255,.07);}
-.sc:last-child{border-right:none;}
-.sc-num{font-family:'Syne',sans-serif;font-size:clamp(2.4rem,5vw,3.8rem);font-weight:800;letter-spacing:-.04em;background:linear-gradient(135deg,#fff 30%,rgba(255,255,255,.5));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1;}
-.sc-suf{background:linear-gradient(135deg,var(--orange),var(--orng-l));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;font-weight:800;}
-.sc-lbl{font-size:.7rem;font-weight:600;color:rgba(255,255,255,.35);letter-spacing:.1em;text-transform:uppercase;margin-top:8px;}
+/* ── NUMBERS ────────────────────────────── */
+.nums-sec{position:relative;overflow:hidden}
+.nums-bg{position:absolute;inset:0;background:url('https://images.unsplash.com/photo-1494412574643-ff11b0a5c1c3?w=1200&q=60') center/cover;opacity:.07}
+.nums-overlay{position:absolute;inset:0;background:var(--ink)}
+.nums-grid{display:grid;grid-template-columns:repeat(4,1fr);position:relative;z-index:2}
+.nc{padding:52px 28px;text-align:center;border-right:1px solid rgba(255,255,255,.08)}
+.nc:last-child{border-right:none}
+.nn{font-family:'Syne',sans-serif;font-size:clamp(2.2rem,4.5vw,3.6rem);font-weight:800;letter-spacing:-.04em;line-height:1;color:#fff}
+.ns{color:var(--orange);font-weight:800}
+.nl{font-size:.67rem;font-weight:600;color:rgba(255,255,255,.32);letter-spacing:.1em;text-transform:uppercase;margin-top:8px}
 
-/* ═══════════════════════════ TRACKING ═══════════════════════════ */
-.tracking-wrap{position:relative;overflow:hidden;}
-.tr-bg{position:absolute;inset:0;background:url('https://images.unsplash.com/photo-1578575437130-527eed3abbec?w=1600&q=80') center 40%/cover;opacity:1;}
-.tr-ov{position:absolute;inset:0;background:linear-gradient(115deg,rgba(7,16,31,.93) 0%,rgba(15,28,58,.84) 60%,rgba(7,16,31,.72) 100%);}
-.tracking-inner{position:relative;z-index:3;display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:center;}
-.tr-text .overline{color:#fb923c;}
-.tr-text .h2{color:#fff;}
-.tr-text .body-t{color:rgba(255,255,255,.58);}
-.tr-chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:24px;}
-.tr-chip{display:inline-flex;align-items:center;gap:6px;font-size:.74rem;font-weight:600;color:rgba(255,255,255,.78);padding:7px 13px;background:rgba(255,255,255,.09);border:1px solid rgba(255,255,255,.14);border-radius:100px;backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);}
-.tr-form{
-  background:rgba(255,255,255,.96);
-  backdrop-filter:blur(28px);-webkit-backdrop-filter:blur(28px);
-  border:1px solid rgba(255,255,255,.92);
-  border-radius:var(--r-lg);
-  padding:36px;
-  box-shadow:0 28px 72px rgba(7,16,31,.28);
-}
-.tf-title{font-family:'Syne',sans-serif;font-size:1.5rem;font-weight:800;letter-spacing:-.03em;color:var(--ink);margin-bottom:4px;}
-.tf-sub{font-size:.82rem;color:var(--muted);margin-bottom:24px;}
-.tf-lbl{display:block;font-size:.68rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:7px;}
-.tf-input{
-  width:100%;border:1.5px solid var(--border-d);border-radius:10px;
-  padding:13px 15px;
-  font-family:'Manrope',sans-serif;font-size:.95rem;color:var(--ink);
-  background:rgba(245,248,255,.7);outline:none;
-  /* iOS fix */
-  -webkit-appearance:none;
-  transition:border-color .2s,box-shadow .2s,background .2s;
-  /* iOS min height */
-  min-height:48px;
-}
-.tf-input:focus{border-color:var(--blue);box-shadow:0 0 0 3px rgba(29,78,216,.1);background:#fff;}
-.tf-input::placeholder{color:#a0afc4;}
-.tf-result{margin-top:12px;padding:12px 14px;border-radius:10px;font-size:.84rem;background:#eff6ff;border:1px solid #bfdbfe;color:#1e40af;display:none;line-height:1.5;}
-.tf-result.show{display:block;}
-.tf-div{height:1px;background:var(--border-d);margin:20px 0;}
-.wa-btn-tr{
-  width:100%;display:flex;align-items:center;justify-content:center;gap:8px;
-  font-size:.85rem;font-weight:700;color:#166534;
-  padding:13px;border-radius:10px;
-  background:rgba(37,211,102,.08);
-  border:1px solid rgba(37,211,102,.25);
-  transition:background .2s;
-  min-height:48px;
-  cursor:pointer;
-}
-.wa-btn-tr:active{background:rgba(37,211,102,.14);}
+/* ── TRACKING ───────────────────────────── */
+.track-wrap{position:relative;overflow:hidden}
+.track-photo{position:absolute;inset:0;background:url('https://images.unsplash.com/photo-1578575437130-527eed3abbec?w=1200&q=65') center 40%/cover;opacity:1}
+.track-ov{position:absolute;inset:0;background:linear-gradient(115deg,rgba(7,16,31,.92) 0%,rgba(15,28,58,.83) 55%,rgba(7,16,31,.7) 100%)}
+.track-inner{position:relative;z-index:2;display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
+.ttext .label{color:#fb923c}
+.ttext .title{color:#fff;margin-bottom:14px}
+.ttext .sub{color:rgba(255,255,255,.57)}
+.tchips{display:flex;flex-wrap:wrap;gap:7px;margin-top:22px}
+.tchip{display:inline-flex;align-items:center;gap:6px;font-size:.73rem;font-weight:600;color:rgba(255,255,255,.77);padding:6px 12px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.15);border-radius:100px}
+.tform{background:#fff;border-radius:var(--r2);padding:32px;box-shadow:0 20px 56px rgba(0,0,0,.22)}
+.tf-title{font-family:'Syne',sans-serif;font-size:1.4rem;font-weight:800;letter-spacing:-.03em;color:var(--ink);margin-bottom:3px}
+.tf-sub{font-size:.8rem;color:var(--muted);margin-bottom:22px}
+.tf-lbl{display:block;font-size:.67rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:6px}
+.tf-in{width:100%;border:1.5px solid var(--border);border-radius:10px;padding:12px 14px;font-family:'Manrope',sans-serif;font-size:16px;color:var(--ink);background:var(--bg);outline:none;min-height:46px;-webkit-appearance:none;transition:border-color .2s,box-shadow .2s}
+.tf-in:focus{border-color:var(--blue);box-shadow:0 0 0 3px rgba(29,78,216,.1);background:#fff}
+.tf-in::placeholder{color:#a8b4c4}
+.tf-res{margin-top:10px;padding:11px 14px;border-radius:9px;font-size:.83rem;display:none;line-height:1.5}
+.tf-res.show{display:block}
+.tf-res.info{background:#eff6ff;border:1px solid #bfdbfe;color:#1e40af}
+.tf-res.warn{background:#fff7ed;border:1px solid #fcd9a0;color:#92400e}
+.tf-sep{height:1px;background:var(--border);margin:18px 0}
+.wa-link{display:flex;align-items:center;justify-content:center;gap:8px;padding:12px;border-radius:10px;background:rgba(37,211,102,.08);border:1px solid rgba(37,211,102,.22);color:#166534;font-size:.84rem;font-weight:700;min-height:46px;touch-action:manipulation;transition:background .18s}
+.wa-link:active{background:rgba(37,211,102,.16)}
 
-/* ═══════════════════════════ WHY ═══════════════════════════ */
-.why-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:48px;}
-.wc{
-  padding:28px 22px;border-radius:var(--r-lg);
-  border:1px solid var(--border-d);
-  background:rgba(255,255,255,.72);
-  backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);
-  transition:transform .35s var(--ease),box-shadow .35s,border-color .3s;
-}
-.wc:hover{transform:translateY(-5px);box-shadow:var(--shadow-lg);border-color:rgba(29,78,216,.18);}
-.wc-icon{width:46px;height:46px;border-radius:11px;background:linear-gradient(135deg,rgba(29,78,216,.08),rgba(234,108,10,.06));border:1px solid rgba(29,78,216,.1);display:flex;align-items:center;justify-content:center;font-size:1.25rem;margin-bottom:16px;}
-.wc-name{font-family:'Syne',sans-serif;font-size:.9rem;font-weight:800;color:var(--ink);margin-bottom:7px;letter-spacing:-.01em;}
-.wc-desc{font-size:.78rem;color:var(--muted);line-height:1.62;}
+/* ── WHY ─────────────────────────────────── */
+.why-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:44px}
+.wc{padding:26px 20px;border-radius:var(--r2);border:1px solid var(--border);background:var(--white);box-shadow:var(--shadow);transition:transform .3s var(--ease),box-shadow .3s,border-color .3s}
+.wc:hover{transform:translateY(-4px);box-shadow:var(--shadow-md);border-color:rgba(29,78,216,.2)}
+.wc-ico{width:44px;height:44px;border-radius:10px;background:rgba(29,78,216,.07);border:1px solid rgba(29,78,216,.1);display:flex;align-items:center;justify-content:center;font-size:1.2rem;margin-bottom:14px}
+.wc-name{font-family:'Syne',sans-serif;font-size:.88rem;font-weight:800;color:var(--ink);margin-bottom:6px;letter-spacing:-.01em}
+.wc-desc{font-size:.78rem;color:var(--muted);line-height:1.62}
 
-/* ═══════════════════════════ ABOUT ═══════════════════════════ */
-.about-section{background:rgba(7,16,31,.025);border-top:1px solid var(--border-d);border-bottom:1px solid var(--border-d);}
-.about-inner{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:center;}
-.about-imgs{position:relative;}
-.ai-main{border-radius:var(--r-lg);overflow:hidden;height:440px;box-shadow:var(--shadow-lg);position:relative;}
-.ai-main img{width:100%;height:100%;object-fit:cover;}
-.ai-main::after{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(29,78,216,.14),rgba(234,108,10,.09));}
-.ai-float{position:absolute;border-radius:14px;padding:16px 18px;box-shadow:var(--shadow-lg);}
-.aif-1{bottom:-20px;left:-20px;}
-.aif-2{top:-16px;right:-16px;}
-.aif-icon{font-size:1.3rem;margin-bottom:5px;}
-.aif-val{font-family:'Syne',sans-serif;font-size:1.2rem;font-weight:800;color:var(--ink);letter-spacing:-.02em;}
-.aif-lbl{font-size:.68rem;font-weight:600;color:var(--muted);}
-.aq{font-family:'Syne',sans-serif;font-size:.98rem;font-weight:700;color:var(--ink);line-height:1.6;margin-bottom:18px;padding-left:18px;border-left:3px solid var(--orange);}
-.chips{display:flex;flex-wrap:wrap;gap:7px;margin-top:20px;}
-.chip{padding:5px 13px;background:rgba(29,78,216,.07);border:1px solid rgba(29,78,216,.14);border-radius:100px;font-size:.72rem;font-weight:700;color:var(--blue);}
-.about-btns{display:flex;gap:10px;flex-wrap:wrap;margin-top:28px;}
+/* ── ABOUT ───────────────────────────────── */
+.about-wrap{background:rgba(7,16,31,.02);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
+.about-imgs{position:relative}
+.ab-main{border-radius:var(--r2);overflow:hidden;height:400px;box-shadow:var(--shadow-md);position:relative}
+.ab-main img{width:100%;height:100%;object-fit:cover}
+.ab-float{position:absolute;border-radius:var(--r);padding:14px 16px;background:var(--white);border:1px solid var(--border);box-shadow:var(--shadow-md)}
+.abf1{bottom:-18px;left:-16px}
+.abf2{top:-14px;right:-14px}
+.abf-ico{font-size:1.2rem;margin-bottom:4px}
+.abf-val{font-family:'Syne',sans-serif;font-size:1.1rem;font-weight:800;color:var(--ink);letter-spacing:-.02em}
+.abf-lbl{font-size:.66rem;font-weight:600;color:var(--muted)}
+.aq{font-family:'Syne',sans-serif;font-size:.95rem;font-weight:700;color:var(--ink);line-height:1.6;margin-bottom:16px;padding-left:16px;border-left:3px solid var(--orange)}
+.chips{display:flex;flex-wrap:wrap;gap:7px;margin-top:18px}
+.chip{padding:5px 12px;background:rgba(29,78,216,.07);border:1px solid rgba(29,78,216,.13);border-radius:100px;font-size:.71rem;font-weight:700;color:var(--blue)}
+.about-btns{display:flex;gap:10px;flex-wrap:wrap;margin-top:24px}
 
-/* ═══════════════════════════ GALLERY ═══════════════════════════ */
-.gallery-section{padding:64px 0;overflow:hidden;background:rgba(7,16,31,.02);border-top:1px solid var(--border-d);border-bottom:1px solid var(--border-d);}
-.gallery-label{text-align:center;margin-bottom:28px;}
-.g-wrap{position:relative;overflow:hidden;}
-.g-wrap::before,.g-wrap::after{content:'';position:absolute;top:0;bottom:0;z-index:2;width:100px;pointer-events:none;}
-.g-wrap::before{left:0;background:linear-gradient(to right,var(--bg),transparent);}
-.g-wrap::after{right:0;background:linear-gradient(to left,var(--bg),transparent);}
-.g-track{display:flex;gap:14px;width:max-content;animation:gscroll 30s linear infinite;}
-.g-track:hover{animation-play-state:paused;}
-@keyframes gscroll{from{transform:translateX(0);}to{transform:translateX(-50%);}}
-.g-img{width:260px;height:168px;border-radius:14px;object-fit:cover;flex-shrink:0;box-shadow:var(--shadow);transition:transform .4s var(--ease),box-shadow .4s;}
-.g-img:hover{transform:scale(1.04) translateY(-4px);box-shadow:var(--shadow-lg);}
+/* ── GALLERY ─────────────────────────────── */
+.gallery{padding:56px 0;overflow:hidden;border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+.g-strip{overflow:hidden;position:relative}
+.g-strip::before,.g-strip::after{content:'';position:absolute;top:0;bottom:0;z-index:2;width:80px;pointer-events:none}
+.g-strip::before{left:0;background:linear-gradient(to right,var(--bg),transparent)}
+.g-strip::after{right:0;background:linear-gradient(to left,var(--bg),transparent)}
+.g-track{display:flex;gap:12px;width:max-content;animation:gscr 28s linear infinite}
+.g-track:hover{animation-play-state:paused}
+@keyframes gscr{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.g-img{width:240px;height:155px;border-radius:var(--r);object-fit:cover;flex-shrink:0;box-shadow:var(--shadow);transition:transform .35s var(--ease)}
+.g-img:hover{transform:scale(1.03) translateY(-3px)}
 
-/* ═══════════════════════════ CONTACT ═══════════════════════════ */
-.contact-inner{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start;margin-top:48px;}
-.ci-list{display:flex;flex-direction:column;gap:14px;}
-.ci-card{display:flex;align-items:flex-start;gap:14px;padding:18px 20px;border-radius:var(--r);background:rgba(255,255,255,.72);border:1px solid var(--border-d);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);transition:transform .3s var(--ease),box-shadow .3s;}
-.ci-card:hover{transform:translateX(4px);box-shadow:var(--shadow);}
-.ci-ico{width:42px;height:42px;flex-shrink:0;border-radius:10px;background:linear-gradient(135deg,rgba(234,108,10,.1),rgba(234,108,10,.05));border:1px solid rgba(234,108,10,.16);display:flex;align-items:center;justify-content:center;font-size:1rem;}
-.ci-lbl{font-size:.67rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--orange);margin-bottom:3px;}
-.ci-val{font-size:.86rem;color:var(--ink);line-height:1.55;}
-.ci-val a{color:var(--ink-2);transition:color .2s;}
-.ci-val a:hover{color:var(--blue);}
-.wa-big{display:flex;align-items:center;justify-content:center;gap:9px;padding:14px 20px;border-radius:12px;background:rgba(37,211,102,.08);border:1px solid rgba(37,211,102,.24);color:#166534;font-size:.86rem;font-weight:700;transition:background .2s;min-height:48px;}
-.wa-big:active{background:rgba(37,211,102,.15);}
-.map-card{border-radius:var(--r-lg);overflow:hidden;min-height:340px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;text-align:center;padding:36px;background:rgba(255,255,255,.78);border:1px solid var(--border);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);box-shadow:var(--shadow);position:relative;}
-.map-grid-bg{position:absolute;inset:0;opacity:.05;background-image:url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%231d4ed8' fill-opacity='1'%3E%3Cpath d='M0 40L40 0H20L0 20M40 40V20L20 40'/%3E%3C/g%3E%3C/svg%3E");}
-.map-content{position:relative;z-index:1;display:flex;flex-direction:column;align-items:center;gap:10px;}
-.map-icon{font-size:2.6rem;}
-.map-title{font-family:'Syne',sans-serif;font-size:1.3rem;font-weight:800;color:var(--ink);letter-spacing:-.02em;}
-.map-addr{font-size:.83rem;color:var(--muted);max-width:250px;line-height:1.6;}
+/* ── CONTACT ─────────────────────────────── */
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start;margin-top:44px}
+.ci-list{display:flex;flex-direction:column;gap:12px}
+.ci{display:flex;align-items:flex-start;gap:13px;padding:16px 18px;border-radius:var(--r);background:var(--white);border:1px solid var(--border);box-shadow:var(--shadow);transition:transform .25s var(--ease)}
+.ci:hover{transform:translateX(3px)}
+.ci-ico{width:40px;height:40px;flex-shrink:0;border-radius:9px;background:rgba(234,108,10,.08);border:1px solid rgba(234,108,10,.14);display:flex;align-items:center;justify-content:center;font-size:1rem}
+.ci-lbl{font-size:.65rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--orange);margin-bottom:3px}
+.ci-val{font-size:.85rem;color:var(--ink);line-height:1.55}
+.ci-val a{color:var(--ink2);transition:color .18s}
+.ci-val a:hover{color:var(--blue)}
+.wa-cta{display:flex;align-items:center;justify-content:center;gap:8px;padding:13px 18px;border-radius:var(--r);background:rgba(37,211,102,.08);border:1px solid rgba(37,211,102,.22);color:#166534;font-size:.85rem;font-weight:700;min-height:46px;touch-action:manipulation;transition:background .18s}
+.wa-cta:active{background:rgba(37,211,102,.16)}
+.map-box{border-radius:var(--r2);min-height:320px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;text-align:center;padding:32px;background:var(--white);border:1px solid var(--border);box-shadow:var(--shadow)}
+.map-ico{font-size:2.4rem}
+.map-t{font-family:'Syne',sans-serif;font-size:1.25rem;font-weight:800;color:var(--ink);letter-spacing:-.02em}
+.map-a{font-size:.82rem;color:var(--muted);max-width:240px;line-height:1.6}
 
-/* ═══════════════════════════ FOOTER ═══════════════════════════ */
-footer{background:var(--ink);color:rgba(255,255,255,.55);}
-.footer-top{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:48px;padding:64px 0 48px;border-bottom:1px solid rgba(255,255,255,.07);}
-.f-logo{font-family:'Syne',sans-serif;font-size:1.35rem;font-weight:800;letter-spacing:-.02em;color:#fff;margin-bottom:12px;}
-.f-logo em{font-style:normal;color:var(--orng-l);}
-.f-tagline{font-size:.82rem;line-height:1.7;max-width:230px;}
-.f-col h5{font-size:.65rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.28);margin-bottom:16px;}
-.f-col a{display:block;font-size:.83rem;color:rgba(255,255,255,.55);margin-bottom:10px;transition:color .2s;min-height:32px;line-height:32px;}
-.f-col a:hover{color:rgba(255,255,255,.9);}
-.footer-bot{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;padding:22px 0;padding-bottom:calc(22px + var(--sab));}
-.footer-bot p{font-size:.76rem;}
+/* ── FOOTER ──────────────────────────────── */
+footer{background:var(--ink);color:rgba(255,255,255,.5)}
+.ft{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:44px;padding:60px 0 44px;border-bottom:1px solid rgba(255,255,255,.07)}
+.fl{font-family:'Syne',sans-serif;font-size:1.3rem;font-weight:800;letter-spacing:-.01em;color:#fff;margin-bottom:10px}
+.fl em{font-style:normal;color:var(--orangel)}
+.ft p{font-size:.8rem;line-height:1.7;max-width:220px}
+.fc h5{font-size:.63rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.27);margin-bottom:14px}
+.fc a{display:block;font-size:.82rem;color:rgba(255,255,255,.5);margin-bottom:9px;min-height:30px;line-height:30px;transition:color .18s}
+.fc a:hover{color:rgba(255,255,255,.88)}
+.fb{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;padding:20px 0;padding-bottom:calc(20px + var(--sab))}
+.fb p{font-size:.75rem}
 
-/* ═══════════════════════════ WA FLOAT ═══════════════════════════ */
+/* ── WA FLOAT ────────────────────────────── */
 .wa-float{
-  position:fixed;
-  bottom:calc(28px + var(--sab));
-  right:24px;z-index:400;
-  width:54px;height:54px;
+  position:fixed;bottom:calc(24px + var(--sab));right:20px;z-index:400;
+  width:52px;height:52px;min-width:44px;min-height:44px;
   background:#25D366;border-radius:50%;
   display:flex;align-items:center;justify-content:center;
-  box-shadow:0 6px 24px rgba(37,211,102,.42);
-  transition:transform .3s var(--ease),box-shadow .3s;
-  /* min touch target */
-  min-width:48px;min-height:48px;
+  box-shadow:0 4px 20px rgba(37,211,102,.38);
+  transition:transform .25s var(--ease),box-shadow .25s;
+  touch-action:manipulation;
 }
-.wa-float:active{transform:scale(.93);}
-.wa-float:hover{transform:scale(1.08) translateY(-2px);box-shadow:0 12px 36px rgba(37,211,102,.52);}
-.wa-pulse{position:absolute;inset:0;border-radius:50%;background:#25D366;animation:wap 2.5s ease infinite;}
-@keyframes wap{0%{transform:scale(1);opacity:.55;}100%{transform:scale(1.75);opacity:0;}}
+.wa-float:hover{transform:scale(1.08);box-shadow:0 8px 28px rgba(37,211,102,.48)}
+.wa-float:active{transform:scale(.93)}
+.wa-ring{position:absolute;inset:0;border-radius:50%;background:#25D366;animation:wap 2.5s ease infinite}
+@keyframes wap{0%{transform:scale(1);opacity:.5}100%{transform:scale(1.65);opacity:0}}
 
-/* ═══════════════════════════ RESPONSIVE: TABLET (max 1024px) ═══════════════════════════ */
+/* ══════════ RESPONSIVE ══════════ */
+/* Tablet ≤1024 */
 @media(max-width:1024px){
-  .footer-top{grid-template-columns:1fr 1fr;gap:32px;}
-  .why-grid{grid-template-columns:repeat(2,1fr);}
-  .stats-grid{grid-template-columns:repeat(2,1fr);}
-  .sc:nth-child(2){border-right:none;}
-  .sc:nth-child(3){border-top:1px solid rgba(255,255,255,.07);}
-  .sc:nth-child(4){border-top:1px solid rgba(255,255,255,.07);border-right:none;}
-  .hero-visual{height:380px;}
-  .hv-main{height:240px;}
-  .fc-3{top:200px;}
+  .ft{grid-template-columns:1fr 1fr;gap:28px}
+  .why-grid{grid-template-columns:repeat(2,1fr)}
+  .nums-grid{grid-template-columns:repeat(2,1fr)}
+  .nc:nth-child(2){border-right:none}
+  .nc:nth-child(3){border-top:1px solid rgba(255,255,255,.08)}
+  .nc:nth-child(4){border-top:1px solid rgba(255,255,255,.08);border-right:none}
 }
 
-/* ═══════════════════════════ RESPONSIVE: MOBILE (max 860px) ═══════════════════════════ */
+/* Mobile ≤860 */
 @media(max-width:860px){
-  /* Hide desktop nav links, show burger */
-  .nav-links{display:none;}
-  .nav-burger{display:flex;}
-  #nav{padding:0 14px 0 18px;height:56px;}
+  .nav-links{display:none}
+  .burger{display:flex}
+  #nav{height:54px;padding:0 12px 0 16px}
 
-  /* Hero: stack columns */
-  .hero-cols{grid-template-columns:1fr;gap:32px;}
-  .hero-btns .btn{max-width:none;flex:1 1 calc(50% - 5px);}
+  .hero-grid{grid-template-columns:1fr;gap:28px}
+  .hero-btns .btn{flex:1 1 calc(50% - 5px);max-width:none}
+  .hero-vis{height:280px}
+  .hv-img{height:220px}
+  .sc1{left:0;bottom:50px}
+  .sc2{right:0;bottom:8px;min-width:165px}
 
-  /* Hero visual simplified on tablet */
-  .hero-visual{height:320px;}
-  .hv-main{height:240px;}
-  .fc-1{left:0;bottom:60px;}
-  .fc-2{right:0;min-width:170px;}
-  .fc-3{display:none;}
+  .statsbar{grid-template-columns:repeat(2,1fr)}
+  .sbcell:nth-child(2){border-right:none}
+  .sbcell:nth-child(3){border-top:1px solid var(--border)}
+  .sbcell:nth-child(4){border-top:1px solid var(--border);border-right:none}
 
-  /* Hero stats bar: 2×2 */
-  .hero-statsbar{grid-template-columns:repeat(2,1fr);}
-  .sb-item:nth-child(2){border-right:none;}
-  .sb-item:nth-child(3){border-top:1px solid var(--border-d);}
-  .sb-item:nth-child(4){border-top:1px solid var(--border-d);border-right:none;}
+  .svc-grid{grid-template-columns:1fr;max-width:460px;margin:0 auto}
+  .svc-head{flex-direction:column;align-items:flex-start}
 
-  /* Services: single col */
-  .bento{grid-template-columns:1fr;max-width:480px;margin:0 auto;}
-  .services-head{flex-direction:column;align-items:flex-start;}
-
-  /* Tracking: stack */
-  .tracking-inner{grid-template-columns:1fr;gap:40px;}
-
-  /* About: stack */
-  .about-inner{grid-template-columns:1fr;gap:40px;}
-  .ai-main{height:320px;}
-  .aif-1{left:0;bottom:-16px;}
-  .aif-2{right:0;top:-12px;}
-
-  /* Contact: stack */
-  .contact-inner{grid-template-columns:1fr;gap:32px;}
-
-  /* Footer */
-  .footer-top{grid-template-columns:1fr 1fr;gap:28px;}
+  .track-inner{grid-template-columns:1fr;gap:36px}
+  .about-grid{grid-template-columns:1fr;gap:36px}
+  .ab-main{height:300px}
+  .abf1{left:0;bottom:-14px}
+  .abf2{right:0;top:-10px}
+  .contact-grid{grid-template-columns:1fr;gap:28px}
+  .ft{grid-template-columns:1fr 1fr}
 }
 
-/* ═══════════════════════════ RESPONSIVE: SMALL MOBILE (max 540px) ═══════════════════════════ */
-@media(max-width:540px){
-  /* Nav pill text shorter */
-  .nav-cta .full-text{display:none;}
-  .nav-cta .short-text{display:inline;}
+/* Small mobile ≤560 */
+@media(max-width:560px){
+  .hero-btns .btn{flex:1 1 100%;max-width:none}
+  .hero-kpis{gap:12px}
+  .kpi-div{display:none}
+  .hero-vis{height:200px}
+  .hv-img{height:200px}
+  .sc1,.sc2{display:none}
 
-  /* Hero */
-  .hero{padding-top:calc(56px + 12px + var(--sat) + 24px);}
-  .hero-btns{gap:8px;}
-  .hero-btns .btn{flex:1 1 100%;max-width:none;}
-  .hero-trust{gap:14px;}
-  .ht-div{display:none;}
+  .statsbar{grid-template-columns:1fr 1fr}
+  .sbcell{padding:14px 8px}
+  .sbn{font-size:1.4rem}
 
-  /* Hero visual: hide floats, show only main image */
-  .hero-visual{height:220px;}
-  .hv-main{height:220px;}
-  .fc-1,.fc-2,.fc-3{display:none;}
+  .svc-grid{max-width:none}
 
-  /* Stats bar: 2x2 */
-  .hero-statsbar{grid-template-columns:1fr 1fr;}
-  .sb-item{padding:16px 10px;}
-  .sb-num{font-size:1.5rem;}
+  .why-grid{grid-template-columns:1fr}
 
-  /* Stats section */
-  .stats-grid{grid-template-columns:1fr 1fr;}
-  .sc{padding:40px 20px;}
+  .ab-main{height:240px}
+  .abf1,.abf2{display:none}
+  .about-btns{flex-direction:column}
+  .about-btns .btn{width:100%}
 
-  /* Services */
-  .bento{max-width:none;}
+  .map-box{min-height:240px;padding:22px 16px}
+  .ft{grid-template-columns:1fr}
+  .fb{flex-direction:column;text-align:center}
 
-  /* Why: single col */
-  .why-grid{grid-template-columns:1fr;}
+  .g-img{width:190px;height:125px}
+  .mqi{padding:0 22px;font-size:.63rem}
 
-  /* Tracking form */
-  .tr-form{padding:24px 18px;}
-  .tr-chips{gap:6px;}
-  .tr-chip{font-size:.68rem;padding:6px 10px;}
-
-  /* About */
-  .ai-main{height:240px;}
-  .aif-1,.aif-2{display:none;}
-  .about-btns{flex-direction:column;}
-  .about-btns .btn{width:100%;}
-
-  /* Contact */
-  .map-card{min-height:260px;padding:24px 16px;}
-
-  /* Footer */
-  .footer-top{grid-template-columns:1fr;}
-  .footer-bot{flex-direction:column;text-align:center;}
-
-  /* WA float: smaller */
-  .wa-float{width:50px;height:50px;right:16px;bottom:calc(20px + var(--sab));}
-
-  /* Gallery images smaller */
-  .g-img{width:200px;height:130px;}
-
-  /* Marquee smaller */
-  .mitem{padding:0 24px;font-size:.66rem;}
-
-  /* Section padding */
-  .section{padding:48px 0;}
-  .gallery-section{padding:48px 0;}
+  .nums-grid{grid-template-columns:1fr 1fr}
+  .nc{padding:36px 16px}
 }
 
-/* ═══════════════════════════ RESPONSIVE: TINY (max 375px - iPhone SE) ═══════════════════════════ */
+/* iPhone SE / tiny ≤375 */
 @media(max-width:375px){
-  .hero-title{font-size:2.2rem;}
-  .h2{font-size:1.7rem;}
-  .container{padding:0 14px;}
-  #nav{padding:0 10px 0 14px;}
-  .nav-logo{font-size:.95rem;}
-  .btn{padding:13px 18px;font-size:.83rem;}
+  .hero-title{font-size:2.1rem}
+  .title{font-size:1.7rem}
+  .wrap{padding:0 12px}
+  #nav{padding:0 8px 0 13px}
+  .nav-logo{font-size:.95rem}
+  .btn{padding:12px 16px;font-size:.82rem}
+  .tform{padding:22px 16px}
 }
 
-/* ═══════════════════════════ TOUCH DEVICE: disable cursor ═══════════════════════════ */
+/* Touch: disable hover animations */
 @media(hover:none),(pointer:coarse){
-  body{cursor:auto;}
-  .cursor-dot,.cursor-ring{display:none !important;}
-  /* Remove hover transforms that feel wrong on touch */
-  .bc:hover,.wc:hover,.ci-card:hover,.bento-card:hover{transform:none;box-shadow:var(--shadow);}
-  .btn:hover{transform:none;box-shadow:inherit;}
-  .nav-links a:hover{background:none;color:var(--ink-2);}
-  .nav-links a:hover::after{transform:scaleX(0);}
+  .svc-card:hover,.wc:hover,.ci:hover{transform:none;box-shadow:var(--shadow)}
+  .btn:hover{transform:none;box-shadow:inherit}
 }
 
-/* ═══════════════════════════ IOS SAFARI FIXES ═══════════════════════════ */
-/* Prevent zoom on input focus (iOS) */
-input[type="text"],input[type="search"],select,textarea{font-size:16px !important;}
-/* Smooth scroll inertia on iOS */
-.mobile-drawer{-webkit-overflow-scrolling:touch;}
-/* Prevent double-tap zoom on buttons */
-.btn,a,button{touch-action:manipulation;}
+/* content-visibility for offscreen sections (perf) */
+@supports(content-visibility:auto){
+  .nums-sec,.track-wrap,.about-wrap,.gallery,.contact-sec,footer{
+    content-visibility:auto;
+    contain-intrinsic-size:0 500px;
+  }
+}
 </style>
 </head>
 <body>
 
-<!-- Cursor (hidden on touch) -->
-<div class="cursor-dot" id="cDot"></div>
-<div class="cursor-ring" id="cRing"></div>
-
-<!-- Mesh BG -->
-<div class="mesh-bg"><div class="mb"></div><div class="mb"></div><div class="mb"></div><div class="mb"></div></div>
-<div class="grain"></div>
-
-<!-- WA Float Button -->
+<!-- WA Float -->
 <a class="wa-float" href="https://wa.me/6281905194592?text=Hallo.." target="_blank" rel="noopener" aria-label="Chat WhatsApp">
-  <div class="wa-pulse"></div>
-  <svg width="26" height="26" viewBox="0 0 24 24" fill="#fff"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M11.999 2C6.477 2 2 6.477 2 12c0 1.89.525 3.66 1.438 5.168L2 22l4.95-1.418A9.959 9.959 0 0 0 12 22c5.523 0 10-4.477 10-10S17.523 2 11.999 2z"/></svg>
+  <div class="wa-ring"></div>
+  <svg width="24" height="24" viewBox="0 0 24 24" fill="#fff" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M11.999 2C6.477 2 2 6.477 2 12c0 1.89.525 3.66 1.438 5.168L2 22l4.95-1.418A9.959 9.959 0 0 0 12 22c5.523 0 10-4.477 10-10S17.523 2 11.999 2z"/></svg>
 </a>
 
-<!-- ══════════ NAV ══════════ -->
-<nav id="nav" class="glass">
+<!-- NAV -->
+<nav id="nav">
   <a class="nav-logo" href="#home">RAFASA<em>.</em></a>
-  <ul class="nav-links">
+  <ul class="nav-links" role="list">
     <li><a href="#home">Home</a></li>
     <li><a href="#layanan">Layanan</a></li>
     <li><a href="#tentang">Tentang</a></li>
     <li><a href="#tracking">Cek Resi</a></li>
     <li><a href="#kontak">Kontak</a></li>
-    <li>
-      <a href="https://wa.me/6281905194592" target="_blank" rel="noopener" class="nav-cta">
-        <span class="full-text">💬 Chat WA</span>
-        <span class="short-text" style="display:none">💬 WA</span>
-      </a>
-    </li>
+    <li><a href="https://wa.me/6281905194592" target="_blank" rel="noopener" class="nav-pill">💬 Chat WA</a></li>
   </ul>
-  <button class="nav-burger" id="navBurger" aria-label="Menu" aria-expanded="false">
+  <button class="burger" id="burger" aria-label="Buka menu" aria-expanded="false" aria-controls="drawer">
     <span></span><span></span><span></span>
   </button>
 </nav>
 
 <!-- Mobile Drawer -->
-<div class="mobile-drawer glass-b" id="mDrawer" role="navigation" aria-label="Mobile menu">
+<nav class="drawer" id="drawer" aria-label="Menu mobile">
   <a href="#home"     onclick="closeDr()">🏠 Beranda</a>
   <a href="#layanan"  onclick="closeDr()">📦 Layanan</a>
   <a href="#tentang"  onclick="closeDr()">🏢 Tentang Kami</a>
   <a href="#tracking" onclick="closeDr()">🔍 Cek Resi</a>
   <a href="#kontak"   onclick="closeDr()">📞 Kontak</a>
-  <a href="https://wa.me/6281905194592" target="_blank" rel="noopener" class="md-cta" onclick="closeDr()">💬 Chat WhatsApp Sekarang</a>
-</div>
+  <a href="https://wa.me/6281905194592" target="_blank" rel="noopener" class="dcta" onclick="closeDr()">💬 Chat WhatsApp</a>
+</nav>
 
-<!-- ══════════ HERO ══════════ -->
+<!-- HERO -->
 <section class="hero" id="home">
-  <div class="hero-bg-photo" id="heroBgPhoto"></div>
-  <div class="hero-body">
-    <div class="hero-cols">
+  <div class="hero-photo" aria-hidden="true"></div>
+  <div class="hero-content">
+    <div class="hero-grid">
 
-      <!-- Left: text -->
+      <!-- Text -->
       <div>
-        <div class="hero-eyebrow"><span class="edot"></span>Terpercaya · Sejak 2016 · Indonesia</div>
+        <div class="hero-badge"><span class="bdot"></span>Terpercaya · Sejak 2016</div>
         <h1 class="hero-title">
           Logistik<br>
-          <span class="grad">Tanpa</span><br>
-          <span class="strk">Batas.</span>
+          <span class="g">Tanpa</span><br>
+          <span class="s">Batas.</span>
         </h1>
-        <p class="hero-sub">Ekspedisi &amp; cargo handling lewat darat, laut, dan udara — menjangkau 34 provinsi Indonesia dengan kecepatan dan keandalan terjamin.</p>
+        <p class="hero-sub">Ekspedisi &amp; cargo lewat darat, laut, udara — 34 provinsi Indonesia, cepat &amp; terpercaya.</p>
         <div class="hero-btns">
           <a class="btn btn-blue" href="#tracking">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
             Lacak Kiriman
           </a>
-          <a class="btn btn-ghost" href="#layanan">Lihat Layanan</a>
+          <a class="btn btn-outline" href="#layanan">Lihat Layanan</a>
         </div>
-        <div class="hero-trust">
-          <div class="ht-item"><span class="ht-num">9+</span><span class="ht-lbl">Tahun Beroperasi</span></div>
-          <div class="ht-div"></div>
-          <div class="ht-item"><span class="ht-num">34</span><span class="ht-lbl">Provinsi</span></div>
-          <div class="ht-div"></div>
-          <div class="ht-item"><span class="ht-num">24/7</span><span class="ht-lbl">Support</span></div>
+        <div class="hero-kpis">
+          <div class="kpi"><span class="kpi-n">9+</span><span class="kpi-l">Tahun Beroperasi</span></div>
+          <div class="kpi-div"></div>
+          <div class="kpi"><span class="kpi-n">34</span><span class="kpi-l">Provinsi</span></div>
+          <div class="kpi-div"></div>
+          <div class="kpi"><span class="kpi-n">24/7</span><span class="kpi-l">Support</span></div>
         </div>
       </div>
 
-      <!-- Right: visual -->
-      <div class="hero-visual">
-        <div class="hv-main">
-          <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=900&q=85" alt="Container port Jakarta" loading="eager"/>
-          <div class="hv-tag">
+      <!-- Visual -->
+      <div class="hero-vis">
+        <div class="hv-img">
+          <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=800&q=80" alt="Pelabuhan kontainer Jakarta" loading="eager" fetchpriority="high"/>
+          <div class="hv-label">
             <span>Pelabuhan Jakarta</span>
-            <div class="hv-live"><span class="live-dot"></span>Live Tracking</div>
+            <div class="hv-live"><span class="ldot"></span>Live</div>
           </div>
         </div>
-        <!-- Float cards -->
-        <div class="fc fc-1 glass-b">
-          <div class="fc-label">Status Kiriman</div>
-          <div class="fc-val" style="font-size:.95rem;display:flex;align-items:center;gap:5px">
+        <div class="scard sc1">
+          <div class="scl">Status Kiriman</div>
+          <div class="scv" style="display:flex;align-items:center;gap:5px;font-size:.88rem">
             <span style="width:7px;height:7px;background:#22c55e;border-radius:50%;flex-shrink:0"></span>Dalam Perjalanan
           </div>
-          <div class="fc-sub">Jakarta → Surabaya</div>
+          <div class="scs">Jakarta → Surabaya</div>
         </div>
-        <div class="fc fc-2 glass-b">
-          <div class="fc-label">Kiriman Hari Ini</div>
-          <div class="fc-val">1,248 <span style="font-size:.85rem;font-weight:600;color:var(--muted)">paket</span></div>
-          <div class="fc-sub fc-green">▲ 12.4% dari kemarin</div>
+        <div class="scard sc2">
+          <div class="scl">Kiriman Hari Ini</div>
+          <div class="scv">1,248 <span style="font-size:.82rem;font-weight:600;color:var(--muted)">paket</span></div>
+          <div class="scs green">▲ 12.4% dari kemarin</div>
         </div>
       </div>
 
     </div>
   </div>
 
-  <!-- Stats bar pinned to bottom -->
-  <div class="hero-statsbar">
-    <div class="sb-item"><div class="sb-num">9+</div><div class="sb-lbl">Tahun Beroperasi</div></div>
-    <div class="sb-item"><div class="sb-num">3</div><div class="sb-lbl">Moda Pengiriman</div></div>
-    <div class="sb-item"><div class="sb-num">34</div><div class="sb-lbl">Provinsi</div></div>
-    <div class="sb-item"><div class="sb-num">24/7</div><div class="sb-lbl">Support</div></div>
+  <!-- Stats Bar -->
+  <div class="statsbar" aria-label="Statistik perusahaan">
+    <div class="sbcell"><div class="sbn">9+</div><div class="sbl">Tahun</div></div>
+    <div class="sbcell"><div class="sbn">3</div><div class="sbl">Moda</div></div>
+    <div class="sbcell"><div class="sbn">34</div><div class="sbl">Provinsi</div></div>
+    <div class="sbcell"><div class="sbn">24/7</div><div class="sbl">Support</div></div>
   </div>
 </section>
 
-<!-- ══════════ MARQUEE ══════════ -->
-<div class="marquee-wrap" aria-hidden="true">
-  <div class="marquee-track">
-    <div class="mitem"><span class="mdot"></span>Pengiriman Darat</div>
-    <div class="mitem"><span class="mdot"></span>Pengiriman Laut</div>
-    <div class="mitem"><span class="mdot"></span>Pengiriman Udara</div>
-    <div class="mitem"><span class="mdot"></span>Cargo Handling</div>
-    <div class="mitem"><span class="mdot"></span>34 Provinsi</div>
-    <div class="mitem"><span class="mdot"></span>24/7 Support</div>
-    <div class="mitem"><span class="mdot"></span>Realtime Tracking</div>
-    <div class="mitem"><span class="mdot"></span>Same-day Delivery</div>
-    <div class="mitem"><span class="mdot"></span>Pengiriman Darat</div>
-    <div class="mitem"><span class="mdot"></span>Pengiriman Laut</div>
-    <div class="mitem"><span class="mdot"></span>Pengiriman Udara</div>
-    <div class="mitem"><span class="mdot"></span>Cargo Handling</div>
-    <div class="mitem"><span class="mdot"></span>34 Provinsi</div>
-    <div class="mitem"><span class="mdot"></span>24/7 Support</div>
-    <div class="mitem"><span class="mdot"></span>Realtime Tracking</div>
-    <div class="mitem"><span class="mdot"></span>Same-day Delivery</div>
+<!-- MARQUEE -->
+<div class="mq" aria-hidden="true">
+  <div class="mq-track">
+    <div class="mqi"><span class="mqd"></span>Pengiriman Darat</div>
+    <div class="mqi"><span class="mqd"></span>Pengiriman Laut</div>
+    <div class="mqi"><span class="mqd"></span>Pengiriman Udara</div>
+    <div class="mqi"><span class="mqd"></span>Cargo Handling</div>
+    <div class="mqi"><span class="mqd"></span>34 Provinsi</div>
+    <div class="mqi"><span class="mqd"></span>24/7 Support</div>
+    <div class="mqi"><span class="mqd"></span>Realtime Tracking</div>
+    <div class="mqi"><span class="mqd"></span>Same-day Delivery</div>
+    <div class="mqi"><span class="mqd"></span>Pengiriman Darat</div>
+    <div class="mqi"><span class="mqd"></span>Pengiriman Laut</div>
+    <div class="mqi"><span class="mqd"></span>Pengiriman Udara</div>
+    <div class="mqi"><span class="mqd"></span>Cargo Handling</div>
+    <div class="mqi"><span class="mqd"></span>34 Provinsi</div>
+    <div class="mqi"><span class="mqd"></span>24/7 Support</div>
+    <div class="mqi"><span class="mqd"></span>Realtime Tracking</div>
+    <div class="mqi"><span class="mqd"></span>Same-day Delivery</div>
   </div>
 </div>
 
-<!-- ══════════ SERVICES ══════════ -->
-<section class="section" id="layanan">
-  <div class="container">
-    <div class="services-head" data-r>
+<!-- SERVICES -->
+<section class="sec" id="layanan">
+  <div class="wrap">
+    <div class="svc-head" data-r>
       <div>
-        <span class="overline">Layanan Kami</span>
-        <h2 class="h2">Tiga Moda,<br><em>Satu Solusi</em></h2>
+        <span class="label">Layanan Kami</span>
+        <h2 class="title">Tiga Moda, <em>Satu Solusi</em></h2>
       </div>
-      <div style="max-width:320px">
-        <p class="body-t">Darat, laut, maupun udara — standar keamanan dan ketepatan waktu terbaik untuk setiap kiriman.</p>
-        <a class="btn btn-ghost" href="#kontak" style="margin-top:18px;width:100%;max-width:200px">Konsultasi Gratis</a>
+      <div style="max-width:300px">
+        <p class="sub">Darat, laut, udara — standar keamanan dan ketepatan waktu terbaik.</p>
+        <a class="btn btn-outline" href="#kontak" style="margin-top:16px">Konsultasi Gratis</a>
       </div>
     </div>
-    <div class="bento">
-      <div class="bc" data-r style="transition-delay:.05s">
-        <div class="bc-img">
-          <img src="https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?w=800&q=80" alt="Pengiriman Darat" loading="lazy"/>
-          <div class="bc-badge"><span class="bc-num">01</span><span class="bc-tag">DARAT</span></div>
+    <div class="svc-grid">
+      <article class="svc-card" data-r style="transition-delay:.05s">
+        <div class="svc-img">
+          <img src="https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?w=700&q=75" alt="Truk pengiriman darat" loading="lazy"/>
+          <div class="svc-badge"><span class="svc-n">01</span><span class="svc-tag">DARAT</span></div>
         </div>
-        <div class="bc-body">
-          <div class="bc-title">Pengiriman Darat</div>
-          <div class="bc-desc">Armada truk modern menjangkau Jawa, Sumatera, Kalimantan &amp; Sulawesi dengan estimasi waktu akurat dan asuransi penuh.</div>
-          <a class="bc-link" href="#kontak">Lihat Detail <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+        <div class="svc-body">
+          <div class="svc-title">Pengiriman Darat</div>
+          <div class="svc-desc">Armada truk modern menjangkau Jawa, Sumatera, Kalimantan &amp; Sulawesi dengan estimasi waktu akurat dan asuransi penuh.</div>
+          <a class="svc-link" href="#kontak">Pelajari <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
         </div>
-      </div>
-      <div class="bc" data-r style="transition-delay:.12s">
-        <div class="bc-img">
-          <img src="https://images.unsplash.com/photo-1524492412937-b28074a5d7da?w=800&q=80" alt="Pengiriman Laut" loading="lazy"/>
-          <div class="bc-badge"><span class="bc-num">02</span><span class="bc-tag">LAUT</span></div>
+      </article>
+      <article class="svc-card" data-r style="transition-delay:.1s">
+        <div class="svc-img">
+          <img src="https://images.unsplash.com/photo-1524492412937-b28074a5d7da?w=700&q=75" alt="Kapal kargo laut" loading="lazy"/>
+          <div class="svc-badge"><span class="svc-n">02</span><span class="svc-tag">LAUT</span></div>
         </div>
-        <div class="bc-body">
-          <div class="bc-title">Pengiriman Laut</div>
-          <div class="bc-desc">Cargo kapal untuk kiriman besar ke seluruh kepulauan Indonesia — kapasitas besar, harga kompetitif, jangkauan terluas.</div>
-          <a class="bc-link" href="#kontak">Lihat Detail <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+        <div class="svc-body">
+          <div class="svc-title">Pengiriman Laut</div>
+          <div class="svc-desc">Cargo kapal untuk kiriman besar ke seluruh kepulauan Indonesia — kapasitas besar, harga kompetitif.</div>
+          <a class="svc-link" href="#kontak">Pelajari <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
         </div>
-      </div>
-      <div class="bc" data-r style="transition-delay:.19s">
-        <div class="bc-img">
-          <img src="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=800&q=80" alt="Pengiriman Udara" loading="lazy"/>
-          <div class="bc-badge"><span class="bc-num">03</span><span class="bc-tag">UDARA</span></div>
+      </article>
+      <article class="svc-card" data-r style="transition-delay:.15s">
+        <div class="svc-img">
+          <img src="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=700&q=75" alt="Pesawat kargo udara" loading="lazy"/>
+          <div class="svc-badge"><span class="svc-n">03</span><span class="svc-tag">UDARA</span></div>
         </div>
-        <div class="bc-body">
-          <div class="bc-title">Pengiriman Udara</div>
-          <div class="bc-desc">Air freight ekspres untuk kiriman prioritas — waktu tempuh minimal, jaminan keamanan, tersedia same-day delivery.</div>
-          <a class="bc-link" href="#kontak">Lihat Detail <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+        <div class="svc-body">
+          <div class="svc-title">Pengiriman Udara</div>
+          <div class="svc-desc">Air freight ekspres untuk kiriman prioritas — waktu tempuh minimal, tersedia same-day delivery.</div>
+          <a class="svc-link" href="#kontak">Pelajari <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
         </div>
-      </div>
+      </article>
     </div>
   </div>
 </section>
 
-<!-- ══════════ STATS ══════════ -->
-<section class="stats-section">
-  <div class="stats-bg"></div>
-  <div class="stats-overlay"></div>
-  <div class="stats-grid container" style="max-width:100%;padding:0">
-    <div class="sc" data-r="f"><div class="sc-num"><span class="count-me" data-target="9">9</span><span class="sc-suf">+</span></div><div class="sc-lbl">Tahun Beroperasi</div></div>
-    <div class="sc" data-r="f" style="transition-delay:.1s"><div class="sc-num"><span class="count-me" data-target="34">34</span></div><div class="sc-lbl">Provinsi Dijangkau</div></div>
-    <div class="sc" data-r="f" style="transition-delay:.2s"><div class="sc-num"><span class="count-me" data-target="98">98</span><span class="sc-suf">.7%</span></div><div class="sc-lbl">On-Time Delivery</div></div>
-    <div class="sc" data-r="f" style="transition-delay:.3s"><div class="sc-num"><span class="count-me" data-target="24">24</span><span class="sc-suf">/7</span></div><div class="sc-lbl">Customer Support</div></div>
+<!-- NUMBERS -->
+<section class="nums-sec">
+  <div class="nums-bg"></div>
+  <div class="nums-overlay"></div>
+  <div class="nums-grid wrap" style="max-width:100%;padding:0">
+    <div class="nc" data-r="f"><div class="nn"><span class="cnt" data-t="9">9</span><span class="ns">+</span></div><div class="nl">Tahun Beroperasi</div></div>
+    <div class="nc" data-r="f" style="transition-delay:.1s"><div class="nn"><span class="cnt" data-t="34">34</span></div><div class="nl">Provinsi</div></div>
+    <div class="nc" data-r="f" style="transition-delay:.2s"><div class="nn"><span class="cnt" data-t="98">98</span><span class="ns">.7%</span></div><div class="nl">On-Time Delivery</div></div>
+    <div class="nc" data-r="f" style="transition-delay:.3s"><div class="nn"><span class="cnt" data-t="24">24</span><span class="ns">/7</span></div><div class="nl">Customer Support</div></div>
   </div>
 </section>
 
-<!-- ══════════ TRACKING ══════════ -->
-<section class="tracking-wrap section" id="tracking">
-  <div class="tr-bg"></div>
-  <div class="tr-ov"></div>
-  <div class="tracking-inner container">
-    <div class="tr-text" data-r="l">
-      <span class="overline">Lacak Kiriman</span>
-      <h2 class="h2" style="margin-bottom:16px">Pantau Paket<br><em style="color:#fb923c">Realtime.</em></h2>
-      <p class="body-t">Masukkan nomor resi dan lihat status terkini dari sistem pengiriman kami kapan saja, di mana saja.</p>
-      <div class="tr-chips">
-        <span class="tr-chip">
-          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-          Realtime Update
-        </span>
-        <span class="tr-chip">
-          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-          Aman Terjamin
-        </span>
-        <span class="tr-chip">
-          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
-          Tepat Waktu
-        </span>
+<!-- TRACKING -->
+<section class="track-wrap sec" id="tracking">
+  <div class="track-photo" aria-hidden="true"></div>
+  <div class="track-ov" aria-hidden="true"></div>
+  <div class="track-inner wrap">
+    <div class="ttext" data-r="l">
+      <span class="label">Lacak Kiriman</span>
+      <h2 class="title" style="margin-bottom:14px">Pantau Paket <em style="color:#fb923c">Realtime.</em></h2>
+      <p class="sub">Masukkan nomor resi dan lihat status terkini kapan saja, di mana saja.</p>
+      <div class="tchips">
+        <span class="tchip">📍 Realtime Update</span>
+        <span class="tchip">🔒 Aman Terjamin</span>
+        <span class="tchip">⚡ Tepat Waktu</span>
       </div>
     </div>
-    <div class="tr-form" data-r="r">
+    <div class="tform" data-r="r">
       <div class="tf-title">Cek Resi</div>
       <div class="tf-sub">Masukkan nomor resi untuk cek status pengiriman</div>
       <label class="tf-lbl" for="resiIn">Nomor Resi</label>
-      <input class="tf-input" id="resiIn" type="text" placeholder="Contoh: RFX-2024-001234" autocomplete="off" autocorrect="off" autocapitalize="none" spellcheck="false"/>
+      <input class="tf-in" id="resiIn" type="text" placeholder="Contoh: RFX-2024-001234"
+        autocomplete="off" autocorrect="off" autocapitalize="none" spellcheck="false" inputmode="text"/>
       <button class="btn btn-blue" style="width:100%;margin-top:10px" onclick="doTrack()">
-        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
         Lacak Sekarang
       </button>
-      <div class="tf-result" id="tfRes"></div>
-      <div class="tf-div"></div>
-      <p style="font-size:.78rem;color:var(--muted);margin-bottom:10px">Butuh bantuan langsung dari CS?</p>
-      <a href="https://wa.me/6281905194592?text=Hallo.." target="_blank" rel="noopener" class="wa-btn-tr">
+      <div class="tf-res" id="tfRes"></div>
+      <div class="tf-sep"></div>
+      <p style="font-size:.76rem;color:var(--muted);margin-bottom:9px">Butuh bantuan CS langsung?</p>
+      <a href="https://wa.me/6281905194592?text=Hallo.." target="_blank" rel="noopener" class="wa-link">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="#166534"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M11.999 2C6.477 2 2 6.477 2 12c0 1.89.525 3.66 1.438 5.168L2 22l4.95-1.418A9.959 9.959 0 0 0 12 22c5.523 0 10-4.477 10-10S17.523 2 11.999 2z"/></svg>
-        Hubungi CS via WhatsApp
+        Chat via WhatsApp
       </a>
     </div>
   </div>
 </section>
 
-<!-- ══════════ WHY ══════════ -->
-<section class="section" id="keunggulan">
-  <div class="container">
-    <div style="text-align:center;max-width:520px;margin:0 auto" data-r>
-      <span class="overline">Kenapa Rafasa?</span>
-      <h2 class="h2">Nilai yang Kami<br><em>Pegang Teguh</em></h2>
+<!-- WHY -->
+<section class="sec" id="keunggulan">
+  <div class="wrap">
+    <div style="text-align:center;max-width:500px;margin:0 auto" data-r>
+      <span class="label">Kenapa Rafasa?</span>
+      <h2 class="title">Nilai yang Kami <em>Pegang Teguh</em></h2>
     </div>
     <div class="why-grid">
-      <div class="wc" data-r style="transition-delay:.04s"><div class="wc-icon">🛡️</div><div class="wc-name">Safety</div><div class="wc-desc">Keselamatan kiriman adalah prioritas di setiap proses pengiriman kami.</div></div>
-      <div class="wc" data-r style="transition-delay:.09s"><div class="wc-icon">⚡</div><div class="wc-name">Efisien</div><div class="wc-desc">Proses yang streamlined memastikan kiriman tepat waktu dengan biaya kompetitif.</div></div>
-      <div class="wc" data-r style="transition-delay:.14s"><div class="wc-icon">🤝</div><div class="wc-name">Respect &amp; Responsibility</div><div class="wc-desc">Kami menghargai kepercayaan dan bertanggung jawab penuh atas setiap kiriman.</div></div>
-      <div class="wc" data-r style="transition-delay:.19s"><div class="wc-icon">🔭</div><div class="wc-name">Visioner</div><div class="wc-desc">Selalu berinovasi mengikuti perkembangan teknologi logistik modern.</div></div>
-      <div class="wc" data-r style="transition-delay:.24s"><div class="wc-icon">💎</div><div class="wc-name">Integritas</div><div class="wc-desc">Transparansi dalam setiap transaksi membangun kepercayaan jangka panjang.</div></div>
-      <div class="wc" data-r style="transition-delay:.29s"><div class="wc-icon">🎯</div><div class="wc-name">Confidence</div><div class="wc-desc">Percaya diri memberikan solusi logistik terbaik dengan track record teruji.</div></div>
-      <div class="wc" data-r style="transition-delay:.34s"><div class="wc-icon">🏆</div><div class="wc-name">Excellent</div><div class="wc-desc">Standar pelayanan prima yang tidak pernah kami kompromikan untuk Anda.</div></div>
-      <div class="wc" data-r style="transition-delay:.39s"><div class="wc-icon">📞</div><div class="wc-name">24/7 Support</div><div class="wc-desc">Tim CS kami siap membantu kapanpun kamu membutuhkan bantuan.</div></div>
+      <div class="wc" data-r style="transition-delay:.04s"><div class="wc-ico">🛡️</div><div class="wc-name">Safety</div><div class="wc-desc">Keselamatan kiriman adalah prioritas di setiap proses pengiriman kami.</div></div>
+      <div class="wc" data-r style="transition-delay:.09s"><div class="wc-ico">⚡</div><div class="wc-name">Efisien</div><div class="wc-desc">Proses yang streamlined memastikan kiriman tepat waktu dengan biaya kompetitif.</div></div>
+      <div class="wc" data-r style="transition-delay:.14s"><div class="wc-ico">🤝</div><div class="wc-name">Respect &amp; Responsibility</div><div class="wc-desc">Kami menghargai kepercayaan dan bertanggung jawab penuh atas setiap kiriman.</div></div>
+      <div class="wc" data-r style="transition-delay:.19s"><div class="wc-ico">🔭</div><div class="wc-name">Visioner</div><div class="wc-desc">Selalu berinovasi mengikuti perkembangan teknologi logistik modern.</div></div>
+      <div class="wc" data-r style="transition-delay:.24s"><div class="wc-ico">💎</div><div class="wc-name">Integritas</div><div class="wc-desc">Transparansi dalam setiap transaksi membangun kepercayaan jangka panjang.</div></div>
+      <div class="wc" data-r style="transition-delay:.29s"><div class="wc-ico">🎯</div><div class="wc-name">Confidence</div><div class="wc-desc">Percaya diri memberikan solusi logistik terbaik dengan track record teruji.</div></div>
+      <div class="wc" data-r style="transition-delay:.34s"><div class="wc-ico">🏆</div><div class="wc-name">Excellent</div><div class="wc-desc">Standar pelayanan prima yang tidak pernah kami kompromikan untuk Anda.</div></div>
+      <div class="wc" data-r style="transition-delay:.39s"><div class="wc-ico">📞</div><div class="wc-name">24/7 Support</div><div class="wc-desc">Tim CS kami siap membantu kapanpun kamu membutuhkan bantuan.</div></div>
     </div>
   </div>
 </section>
 
-<!-- ══════════ ABOUT ══════════ -->
-<section class="about-section section" id="tentang">
-  <div class="container">
-    <div class="about-inner">
+<!-- ABOUT -->
+<section class="about-wrap sec" id="tentang">
+  <div class="wrap">
+    <div class="about-grid">
       <div class="about-imgs" data-r="l">
-        <div class="ai-main">
-          <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=800&q=80" alt="Warehouse logistik Rafasa" loading="lazy"/>
+        <div class="ab-main">
+          <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=700&q=75" alt="Warehouse logistik Rafasa" loading="lazy"/>
         </div>
-        <div class="ai-float aif-1 glass-b" style="border-radius:14px;box-shadow:var(--shadow-lg)">
-          <div class="aif-icon">🏢</div>
-          <div class="aif-val">2016</div>
-          <div class="aif-lbl">Tahun Berdiri</div>
+        <div class="ab-float abf1">
+          <div class="abf-ico">🏢</div>
+          <div class="abf-val">2016</div>
+          <div class="abf-lbl">Tahun Berdiri</div>
         </div>
-        <div class="ai-float aif-2 glass-b" style="border-radius:14px;box-shadow:var(--shadow-lg)">
-          <div class="aif-icon">🗺️</div>
-          <div class="aif-val">Seluruh Indonesia</div>
-          <div class="aif-lbl">Area Jangkauan</div>
+        <div class="ab-float abf2">
+          <div class="abf-ico">🗺️</div>
+          <div class="abf-val">34 Provinsi</div>
+          <div class="abf-lbl">Area Jangkauan</div>
         </div>
       </div>
       <div data-r="r">
-        <span class="overline">Tentang Kami</span>
-        <h2 class="h2" style="margin-bottom:20px">Solusi Logistik<br><em>Terdepan Indonesia</em></h2>
+        <span class="label">Tentang Kami</span>
+        <h2 class="title" style="margin-bottom:18px">Solusi Logistik <em>Terdepan Indonesia</em></h2>
         <blockquote class="aq">"Didirikan 9 Juni 2016 — kami selalu berpacu menyediakan layanan prima dengan mutu maksimal."</blockquote>
-        <p class="body-t">PT RAFASA GLOBAL EXPRESS tidak hanya menyediakan jasa pengiriman, tapi turut memberikan solusi praktis bagi industri bisnis di manapun untuk mengembangkan layanan kepada customernya.</p>
-        <p class="body-t" style="margin-top:12px">Dengan profesionalitas dan integritas seluruh karyawan — kami siap bersaing di era logistik modern yang terus berkembang pesat.</p>
+        <p class="sub">PT RAFASA GLOBAL EXPRESS tidak hanya menyediakan jasa pengiriman, tapi turut memberikan solusi praktis bagi industri bisnis di manapun untuk mengembangkan layanan kepada customernya.</p>
         <div class="chips">
           <span class="chip">Safety</span><span class="chip">Efisien</span><span class="chip">Respect</span>
           <span class="chip">Visioner</span><span class="chip">Integritas</span><span class="chip">Excellent</span>
         </div>
         <div class="about-btns">
-          <a class="btn btn-orange" href="#kontak">Hubungi Kami <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
-          <a class="btn btn-glass" href="#layanan">Lihat Layanan</a>
+          <a class="btn btn-orange" href="#kontak">Hubungi Kami</a>
+          <a class="btn btn-outline" href="#layanan">Lihat Layanan</a>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ══════════ GALLERY ══════════ -->
-<div class="gallery-section">
-  <div class="gallery-label" data-r="f"><span class="overline" style="color:var(--muted)">Operasional &amp; Armada Kami</span></div>
-  <div class="g-wrap">
+<!-- GALLERY -->
+<div class="gallery">
+  <div style="text-align:center;margin-bottom:24px" data-r="f">
+    <span class="label" style="color:var(--muted)">Operasional &amp; Armada</span>
+  </div>
+  <div class="g-strip">
     <div class="g-track">
-      <img class="g-img" src="https://images.unsplash.com/photo-1578575437130-527eed3abbec?w=520&q=70" alt="container ship" loading="lazy"/>
-      <img class="g-img" src="https://images.unsplash.com/photo-1524492412937-b28074a5d7da?w=520&q=70" alt="cargo vessel" loading="lazy"/>
-      <img class="g-img" src="https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?w=520&q=70" alt="delivery truck" loading="lazy"/>
-      <img class="g-img" src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=520&q=70" alt="containers" loading="lazy"/>
-      <img class="g-img" src="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=520&q=70" alt="cargo plane" loading="lazy"/>
-      <img class="g-img" src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=520&q=70" alt="warehouse" loading="lazy"/>
-      <img class="g-img" src="https://images.unsplash.com/photo-1494412574643-ff11b0a5c1c3?w=520&q=70" alt="port" loading="lazy"/>
-      <!-- Duplicate for seamless loop -->
-      <img class="g-img" src="https://images.unsplash.com/photo-1578575437130-527eed3abbec?w=520&q=70" alt="container ship" loading="lazy"/>
-      <img class="g-img" src="https://images.unsplash.com/photo-1524492412937-b28074a5d7da?w=520&q=70" alt="cargo vessel" loading="lazy"/>
-      <img class="g-img" src="https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?w=520&q=70" alt="delivery truck" loading="lazy"/>
-      <img class="g-img" src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=520&q=70" alt="containers" loading="lazy"/>
-      <img class="g-img" src="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=520&q=70" alt="cargo plane" loading="lazy"/>
-      <img class="g-img" src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=520&q=70" alt="warehouse" loading="lazy"/>
-      <img class="g-img" src="https://images.unsplash.com/photo-1494412574643-ff11b0a5c1c3?w=520&q=70" alt="port" loading="lazy"/>
+      <img class="g-img" src="https://images.unsplash.com/photo-1578575437130-527eed3abbec?w=480&q=65" alt="container ship" loading="lazy"/>
+      <img class="g-img" src="https://images.unsplash.com/photo-1524492412937-b28074a5d7da?w=480&q=65" alt="cargo vessel" loading="lazy"/>
+      <img class="g-img" src="https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?w=480&q=65" alt="delivery truck" loading="lazy"/>
+      <img class="g-img" src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=480&q=65" alt="containers" loading="lazy"/>
+      <img class="g-img" src="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=480&q=65" alt="cargo plane" loading="lazy"/>
+      <img class="g-img" src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=480&q=65" alt="warehouse" loading="lazy"/>
+      <!-- duplicate for loop -->
+      <img class="g-img" src="https://images.unsplash.com/photo-1578575437130-527eed3abbec?w=480&q=65" alt="container ship" loading="lazy"/>
+      <img class="g-img" src="https://images.unsplash.com/photo-1524492412937-b28074a5d7da?w=480&q=65" alt="cargo vessel" loading="lazy"/>
+      <img class="g-img" src="https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?w=480&q=65" alt="delivery truck" loading="lazy"/>
+      <img class="g-img" src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=480&q=65" alt="containers" loading="lazy"/>
+      <img class="g-img" src="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=480&q=65" alt="cargo plane" loading="lazy"/>
+      <img class="g-img" src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=480&q=65" alt="warehouse" loading="lazy"/>
     </div>
   </div>
 </div>
 
-<!-- ══════════ CONTACT ══════════ -->
-<section class="section" id="kontak">
-  <div class="container">
-    <div style="text-align:center;max-width:500px;margin:0 auto" data-r>
-      <span class="overline">Kontak Kami</span>
-      <h2 class="h2">Siap Membantu<br><em>Kapanpun</em></h2>
-      <p class="body-t" style="margin-top:10px">Tim CS kami selalu siap merespon pertanyaan dan kebutuhan pengiriman kamu.</p>
+<!-- CONTACT -->
+<section class="sec contact-sec" id="kontak">
+  <div class="wrap">
+    <div style="text-align:center;max-width:480px;margin:0 auto" data-r>
+      <span class="label">Kontak Kami</span>
+      <h2 class="title">Siap Membantu <em>Kapanpun</em></h2>
+      <p class="sub" style="margin-top:10px">Tim CS kami selalu siap merespon pertanyaan dan kebutuhan pengiriman kamu.</p>
     </div>
-    <div class="contact-inner">
+    <div class="contact-grid">
       <div class="ci-list" data-r="l">
-        <div class="ci-card">
+        <div class="ci">
           <div class="ci-ico">📍</div>
           <div>
             <div class="ci-lbl">Alamat Kantor</div>
             <div class="ci-val">Jl. Letjen Suprapto, Ruko Mega Grosir<br>Cempaka Mas Blok P No. 24, Jakarta</div>
           </div>
         </div>
-        <div class="ci-card">
+        <div class="ci">
           <div class="ci-ico">📞</div>
           <div>
             <div class="ci-lbl">Customer Service</div>
-            <div class="ci-val"><a href="tel:0882000434512">+62 882-0004-34512</a> (CS 1)<br><a href="tel:08811998904">+62 881-1998-904</a> (CS 2)</div>
+            <div class="ci-val"><a href="tel:+6282000434512">+62 882-0004-34512</a> (CS 1)<br><a href="tel:+628811998904">+62 881-1998-904</a> (CS 2)</div>
           </div>
         </div>
-        <div class="ci-card">
+        <div class="ci">
           <div class="ci-ico">✉️</div>
           <div>
             <div class="ci-lbl">Email</div>
             <div class="ci-val"><a href="mailto:rafasaexpress@gmail.com">rafasaexpress@gmail.com</a></div>
           </div>
         </div>
-        <a href="https://wa.me/6281905194592?text=Hallo.." target="_blank" rel="noopener" class="wa-big">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="#166534"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M11.999 2C6.477 2 2 6.477 2 12c0 1.89.525 3.66 1.438 5.168L2 22l4.95-1.418A9.959 9.959 0 0 0 12 22c5.523 0 10-4.477 10-10S17.523 2 11.999 2z"/></svg>
+        <a href="https://wa.me/6281905194592?text=Hallo.." target="_blank" rel="noopener" class="wa-cta">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="#166534"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M11.999 2C6.477 2 2 6.477 2 12c0 1.89.525 3.66 1.438 5.168L2 22l4.95-1.418A9.959 9.959 0 0 0 12 22c5.523 0 10-4.477 10-10S17.523 2 11.999 2z"/></svg>
           Chat WhatsApp Sekarang
         </a>
       </div>
-      <div class="map-card" data-r="r">
-        <div class="map-grid-bg"></div>
-        <div class="map-content">
-          <div class="map-icon">🗺️</div>
-          <div class="map-title">Temukan Kami</div>
-          <div class="map-addr">Ruko Mega Grosir Cempaka Mas, Blok P No. 24, Jakarta Pusat</div>
-          <a class="btn btn-blue" href="https://maps.google.com/?q=Mega+Grosir+Cempaka+Mas+Jakarta" target="_blank" rel="noopener" style="margin-top:16px">
-            Buka Google Maps
-            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14 21 3"/></svg>
-          </a>
-        </div>
+      <div class="map-box" data-r="r">
+        <div class="map-ico">🗺️</div>
+        <div class="map-t">Temukan Kami</div>
+        <div class="map-a">Ruko Mega Grosir Cempaka Mas, Blok P No. 24, Jakarta Pusat</div>
+        <a class="btn btn-blue" href="https://maps.google.com/?q=Mega+Grosir+Cempaka+Mas+Jakarta" target="_blank" rel="noopener" style="margin-top:14px">
+          Buka Google Maps
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14 21 3"/></svg>
+        </a>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ══════════ FOOTER ══════════ -->
+<!-- FOOTER -->
 <footer>
-  <div class="container">
-    <div class="footer-top">
+  <div class="wrap">
+    <div class="ft">
       <div>
-        <div class="f-logo">RAFASA<em>.</em></div>
-        <p class="f-tagline">PT. Rafasa Global Express — solusi logistik terpercaya lewat darat, laut, dan udara sejak 2016.</p>
+        <div class="fl">RAFASA<em>.</em></div>
+        <p>PT. Rafasa Global Express — logistik terpercaya lewat darat, laut, dan udara sejak 2016.</p>
       </div>
-      <div class="f-col">
+      <div class="fc">
         <h5>Layanan</h5>
         <a href="#layanan">Pengiriman Darat</a>
         <a href="#layanan">Pengiriman Laut</a>
         <a href="#layanan">Pengiriman Udara</a>
         <a href="#tracking">Lacak Resi</a>
       </div>
-      <div class="f-col">
+      <div class="fc">
         <h5>Perusahaan</h5>
         <a href="#tentang">Tentang Kami</a>
         <a href="#keunggulan">Keunggulan</a>
         <a href="#kontak">Kontak</a>
       </div>
-      <div class="f-col">
+      <div class="fc">
         <h5>Hubungi</h5>
-        <a href="tel:0882000434512">+62 882-0004-34512</a>
-        <a href="tel:08811998904">+62 881-1998-904</a>
-        <a href="mailto:rafasaexpress@gmail.com" style="font-size:.76rem">rafasaexpress@gmail.com</a>
+        <a href="tel:+6282000434512">+62 882-0004-34512</a>
+        <a href="tel:+628811998904">+62 881-1998-904</a>
+        <a href="mailto:rafasaexpress@gmail.com" style="font-size:.74rem;line-height:1.4;margin-top:4px">rafasaexpress@gmail.com</a>
       </div>
     </div>
-    <div class="footer-bot">
+    <div class="fb">
       <p>© 2024 PT. Rafasa Global Express. All Rights Reserved.</p>
       <p>Jl. Letjen Suprapto, Cempaka Mas, Jakarta</p>
     </div>
@@ -1108,121 +883,76 @@ input[type="text"],input[type="search"],select,textarea{font-size:16px !importan
 </footer>
 
 <script>
-/* ── Custom cursor (only on pointer devices) ── */
-if (window.matchMedia('(hover:hover) and (pointer:fine)').matches) {
-  const cDot = document.getElementById('cDot');
-  const cRing = document.getElementById('cRing');
-  let mx=0,my=0,rx=0,ry=0;
-  document.addEventListener('mousemove', e => { mx=e.clientX; my=e.clientY; });
-  (function animC(){
-    rx += (mx-rx)*0.14; ry += (my-ry)*0.14;
-    cDot.style.cssText  = `left:${mx}px;top:${my}px`;
-    cRing.style.cssText = `left:${rx}px;top:${ry}px`;
-    requestAnimationFrame(animC);
-  })();
-  document.querySelectorAll('a,button,[data-hover]').forEach(el => {
-    el.addEventListener('mouseenter', () => document.body.classList.add('ch'));
-    el.addEventListener('mouseleave', () => document.body.classList.remove('ch'));
-  });
-  document.body.style.cursor = 'none';
-  cDot.style.display = 'block';
-  cRing.style.display = 'block';
-} else {
-  document.getElementById('cDot').remove();
-  document.getElementById('cRing').remove();
-}
-
 /* ── Nav scroll ── */
-const navEl = document.getElementById('nav');
+const nav = document.getElementById('nav');
 window.addEventListener('scroll', () => {
-  navEl.classList.toggle('scrolled', window.scrollY > 60);
-}, {passive:true});
+  nav.classList.toggle('scrolled', window.scrollY > 60);
+}, {passive: true});
 
-/* ── Burger / Drawer ── */
-const burger = document.getElementById('navBurger');
-const drawer = document.getElementById('mDrawer');
-burger.addEventListener('click', () => {
-  const isOpen = burger.classList.toggle('open');
-  drawer.classList.toggle('open', isOpen);
-  burger.setAttribute('aria-expanded', isOpen);
-  // Prevent body scroll when drawer open
-  document.body.style.overflow = isOpen ? 'hidden' : '';
+/* ── Burger / drawer ── */
+const burgerBtn = document.getElementById('burger');
+const drawer    = document.getElementById('drawer');
+burgerBtn.addEventListener('click', () => {
+  const open = burgerBtn.classList.toggle('open');
+  drawer.classList.toggle('open', open);
+  burgerBtn.setAttribute('aria-expanded', open);
+  document.body.style.overflow = open ? 'hidden' : '';
 });
 function closeDr() {
-  burger.classList.remove('open');
+  burgerBtn.classList.remove('open');
   drawer.classList.remove('open');
-  burger.setAttribute('aria-expanded', 'false');
+  burgerBtn.setAttribute('aria-expanded', 'false');
   document.body.style.overflow = '';
 }
-// Close on outside tap (mobile)
 document.addEventListener('click', e => {
-  if (!navEl.contains(e.target) && !drawer.contains(e.target)) closeDr();
+  if (!nav.contains(e.target) && !drawer.contains(e.target)) closeDr();
 });
-// Close on escape key
-document.addEventListener('keydown', e => { if(e.key==='Escape') closeDr(); });
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closeDr(); });
 
-/* ── Scroll Reveal ── */
+/* ── Scroll reveal ── */
 const ro = new IntersectionObserver(entries => {
   entries.forEach(e => {
-    if (e.isIntersecting) {
-      e.target.classList.add('on');
-      ro.unobserve(e.target);
-    }
+    if (e.isIntersecting) { e.target.classList.add('on'); ro.unobserve(e.target); }
   });
-}, {threshold:0.08, rootMargin:'0px 0px -48px 0px'});
-document.querySelectorAll('[data-r]').forEach((el,i) => {
-  if (!el.style.transitionDelay) el.style.transitionDelay = (i%5)*0.07+'s';
+}, {threshold: 0.08, rootMargin: '0px 0px -40px 0px'});
+document.querySelectorAll('[data-r]').forEach((el, i) => {
+  if (!el.style.transitionDelay) el.style.transitionDelay = (i % 5) * 0.06 + 's';
   ro.observe(el);
 });
 
-/* ── Counter animation ── */
+/* ── Counter ── */
 function animCount(el, target) {
-  let start; const dur = 1600;
-  const step = ts => {
+  const dur = 1400; let start;
+  const run = ts => {
     if (!start) start = ts;
-    const p = Math.min((ts-start)/dur, 1);
-    const ease = 1-Math.pow(1-p, 3);
-    el.textContent = Math.round(ease*target);
-    if (p < 1) requestAnimationFrame(step);
-    else el.textContent = target;
+    const p = Math.min((ts - start) / dur, 1);
+    el.textContent = Math.round((1 - Math.pow(1 - p, 3)) * target);
+    if (p < 1) requestAnimationFrame(run); else el.textContent = target;
   };
-  requestAnimationFrame(step);
+  requestAnimationFrame(run);
 }
 const co = new IntersectionObserver(entries => {
   entries.forEach(e => {
-    if (e.isIntersecting) {
-      animCount(e.target, parseInt(e.target.dataset.target));
-      co.unobserve(e.target);
-    }
+    if (e.isIntersecting) { animCount(e.target, +e.target.dataset.t); co.unobserve(e.target); }
   });
-}, {threshold:0.5});
-document.querySelectorAll('.count-me').forEach(el => co.observe(el));
+}, {threshold: 0.5});
+document.querySelectorAll('.cnt').forEach(el => co.observe(el));
 
 /* ── Track resi ── */
 function doTrack() {
   const val = document.getElementById('resiIn').value.trim();
   const res = document.getElementById('tfRes');
   if (!val) {
+    res.className = 'tf-res warn show';
     res.innerHTML = '⚠️ Mohon masukkan nomor resi terlebih dahulu.';
-    res.style.cssText = 'background:#fff7ed;border-color:#fed7aa;color:#9a3412;';
   } else {
-    res.innerHTML = '📦 Resi <strong>' + val + '</strong> sedang diproses. Untuk info lengkap hubungi CS di +62 882-0004-34512 atau via WhatsApp.';
-    res.style.cssText = 'background:#eff6ff;border-color:#bfdbfe;color:#1e40af;';
+    res.className = 'tf-res info show';
+    res.innerHTML = '📦 Resi <strong>' + val + '</strong> sedang diproses. Hubungi CS kami di +62 882-0004-34512 atau via WhatsApp untuk info lengkap.';
   }
-  res.classList.add('show');
 }
-document.getElementById('resiIn').addEventListener('keydown', e => { if(e.key==='Enter') doTrack(); });
-
-/* ── Parallax hero bg (desktop only) ── */
-if (window.matchMedia('(hover:hover)').matches) {
-  const heroBg = document.getElementById('heroBgPhoto');
-  window.addEventListener('scroll', () => {
-    const y = window.scrollY;
-    if (y < window.innerHeight*1.2 && heroBg) {
-      heroBg.style.transform = 'translateY('+y*0.22+'px)';
-    }
-  }, {passive:true});
-}
+document.getElementById('resiIn').addEventListener('keydown', e => {
+  if (e.key === 'Enter') doTrack();
+});
 </script>
 </body>
 </html>
